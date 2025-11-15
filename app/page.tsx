@@ -1,4 +1,3 @@
-import AvailabilityBar from "@/components/AvailabilityBar";
 import CategoriesGrid from "@/components/CategoriesGrid";
 import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
@@ -14,7 +13,7 @@ export default function Page() {
   return (
     <main>
       <Hero />
-      <AvailabilityBar />
+      {/* <AvailabilityBar /> */}
       <CategoriesGrid />
       <WhyUs />
       <HowItWorks />

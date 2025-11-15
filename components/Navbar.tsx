@@ -8,9 +8,9 @@ import PrimaryButton from "./PrimaryButton";
 
 const LINKS = [
   { label: "Home", href: "/" },
-  { label: "Safaris", href: "/safaris" },
-  { label: "Excursions", href: "/excursions" },
-  { label: "Diving", href: "/diving" },
+  { label: "Excursions", href: "/excursions-baa-atoll" },
+  { label: "Diving", href: "/dive-with-locals" },
+  { label: "Liveaboard", href: "/liveaboard-diving" },
   { label: "Contact", href: "/contact" },
 ];
 

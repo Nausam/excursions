@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, CalendarDays, Navigation } from "lucide-react";
+import { ArrowRight, Navigation } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import PrimaryButton from "./PrimaryButton";
@@ -12,37 +12,45 @@ type Cat = {
   title: string;
   blurb: string;
   img: string; // /public path
-  datesThisMonth: number;
 };
 
 const CATEGORIES: Cat[] = [
   {
-    slug: "safaris",
-    title: "Safari Trips",
-    blurb: "Small groups • Licensed local guides",
+    slug: "excursions-baa-atoll",
+    title: "Excursion Trips in Baa Atoll",
+    blurb:
+      "Hanifaru Bay mantas & whale sharks • Stay with locals on Dharavandhoo.",
     img: "/images/safari.jpg",
-    datesThisMonth: 8,
   },
   {
-    slug: "excursions",
-    title: "Excursions",
-    blurb: "Hidden sandbanks • Local culture stops",
+    slug: "dive-with-locals",
+    title: "Dive with Locals",
+    blurb:
+      "Tiger shark dives in Fuvahmulah or manta-filled reefs of Baa Atoll.",
     img: "/images/excursion.jpg",
-    datesThisMonth: 12,
   },
   {
-    slug: "diving",
-    title: "Local Diving",
-    blurb: "Clear water, vibrant reefs, pro guides",
+    slug: "liveaboard-diving",
+    title: "Dive in Liveaboard",
+    blurb:
+      "Week-long liveaboard routes like Best of Maldives, Deep South & North Fiesta.",
     img: "/images/diving.jpg",
-    datesThisMonth: 9,
   },
 ];
 
 const META: Record<string, { duration: string; priceLabel: string }> = {
-  safaris: { duration: "Half-day", priceLabel: "From —" },
-  excursions: { duration: "Half / Full-day", priceLabel: "From —" },
-  diving: { duration: "2-tank / Full-day", priceLabel: "From —" },
+  "excursions-baa-atoll": {
+    duration: "6 nights • 7 days",
+    priceLabel: "From $1400",
+  },
+  "dive-with-locals": {
+    duration: "6 nights • 7 days",
+    priceLabel: "From $1400",
+  },
+  "liveaboard-diving": {
+    duration: "7 nights",
+    priceLabel: "TBD",
+  },
 };
 
 // Per-card tilt / offset to mimic the uneven layout
@@ -68,7 +76,7 @@ export default function TopExcursions() {
       // Header fade-up
       gsap.from(".tx-header > *", {
         opacity: 0,
-        y: 0, // no movement
+        y: 0,
         duration: 0.6,
         ease: "power2.out",
         stagger: 0.08,
@@ -132,13 +140,10 @@ export default function TopExcursions() {
               key={d.slug}
               data-card="true"
               className={[
-                // base card
                 "relative isolate rounded-md bg-white shadow-[0_25px_80px_-30px_rgba(0,0,0,0.25)] before:absolute before:inset-0 before:pointer-events-none before:opacity-[.03] before:[background-image:radial-gradient(rgba(0,0,0,.8)_1px,transparent_1px)] before:[background-size:6px_6px]",
                 "ring-1 ring-black/10",
-                // uneven tilt/offset
                 "transition-transform duration-500 will-change-transform",
                 TILTS[i % TILTS.length],
-                // on hover: a tiny straighten + lift (keeps the playful feel)
                 "hover:rotate-0",
               ].join(" ")}
             >
@@ -156,12 +161,6 @@ export default function TopExcursions() {
 
               {/* Body */}
               <div className="p-5">
-                {/* chip */}
-                <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-amber-600 px-3 py-1.5 text-xs font-semibold text-amber-700">
-                  <CalendarDays size={14} />
-                  {d.datesThisMonth} dates this month
-                </div>
-
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <h3 className="text-lg font-semibold leading-tight text-neutral-900">
@@ -179,13 +178,6 @@ export default function TopExcursions() {
                     <Navigation size={16} className="opacity-90" />
                     <span>{meta.duration}</span>
                   </div>
-
-                  {/* <Link
-                    href={`/${d.slug}`}
-                    className="inline-flex items-center rounded-full bg-neutral-900 px-4 py-2 text-[13px] font-semibold text-white hover:bg-neutral-800"
-                  >
-                    Explore
-                  </Link> */}
 
                   <PrimaryButton
                     href={`/${d.slug}`}
