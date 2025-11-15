@@ -184,7 +184,6 @@ export default function TopExcursions() {
                     variant="sky"
                     size="md"
                     trailingIcon={ArrowRight}
-                    className="hidden md:inline-flex"
                   >
                     Explore
                   </PrimaryButton>
