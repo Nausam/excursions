@@ -582,7 +582,7 @@ export default function DiveInLiveaboardPage() {
   }, []);
 
   return (
-    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16">
+    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16 mt-10">
       <div
         ref={shellRef}
         className="space-y-10 rounded-[32px] bg-gradient-to-b from-sky-50/80 via-white to-sky-50/60 p-6 shadow-xl ring-1 ring-sky-100/60 md:space-y-12 md:p-10"
@@ -832,7 +832,7 @@ export default function DiveInLiveaboardPage() {
             className="flex items-baseline justify-between gap-4"
           >
             <h2 className="text-lg font-bold text-slate-900 md:text-xl">
-              7-night Itineraries
+              7-Night Itineraries
             </h2>
             <p className="text-xs text-slate-500 md:text-sm">
               Tap a route to see the full day-by-day plan.

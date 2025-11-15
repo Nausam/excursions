@@ -447,7 +447,7 @@ export default function ExcursionTripDetail({
   }, []);
 
   return (
-    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16">
+    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16 mt-10">
       <div
         ref={shellRef}
         className="space-y-12 rounded-[32px] bg-gradient-to-b from-sky-50/80 via-white to-sky-50/60 p-6 shadow-xl ring-1 ring-sky-100/60 md:p-10"
@@ -708,7 +708,7 @@ export default function ExcursionTripDetail({
               id="itinerary-heading"
               className="text-lg md:text-xl font-bold text-slate-900"
             >
-              Detailed itinerary
+              Detailed Itinerary
             </h2>
             <p className="text-xs md:text-sm text-slate-500">
               Tap a day to see the plan.

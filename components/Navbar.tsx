@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import { ArrowRight, CalendarRange, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
@@ -21,7 +21,7 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement | null>(null);
   const brandRef = useRef<HTMLAnchorElement | null>(null);
   const linksRef = useRef<HTMLAnchorElement[]>([]);
-  const ctaWrapRef = useRef<HTMLSpanElement | null>(null); // wrap the CTA to avoid ref issues
+  const ctaWrapRef = useRef<HTMLSpanElement | null>(null);
   const burgerRef = useRef<HTMLButtonElement | null>(null);
 
   // Mobile refs
@@ -155,7 +155,7 @@ export default function Navbar() {
           <Link ref={brandRef} href="/" className="flex items-center gap-2">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 ring-2 ring-white shadow" />
             <span className="text-[15px] font-extrabold tracking-wide">
-              Just Trip
+              La Via Travels
             </span>
           </Link>
 
@@ -182,13 +182,11 @@ export default function Navbar() {
           {/* CTA (wrapped for ref) */}
           <span ref={ctaWrapRef} className="hidden md:inline-flex">
             <PrimaryButton
-              href="/departures"
-              variant="sky"
+              href="https://wa.me/9607557042?text=Hi%2C%20I%27m%20interested%20in%20the%20Dive%20with%20Locals%20packages.%20My%20name%20is%20____%20and%20we%20are%20____%20certified%20divers."
+              variant="emerald"
               size="md"
-              leadingIcon={CalendarRange}
-              trailingIcon={ArrowRight}
             >
-              Reserve dates
+              Contact Us
             </PrimaryButton>
           </span>
 
@@ -209,7 +207,7 @@ export default function Navbar() {
             open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           }`}
         >
-          <div className="min-h-0 overflow-hidden">
+          <div className="min-h-0 overflow-hidden mx-auto">
             <ul className="pb-3 pt-2 space-y-2">
               {LINKS.map((l, i) => (
                 <li key={l.href}>
@@ -225,24 +223,17 @@ export default function Navbar() {
                     "
                   >
                     {l.label}
-                    <span className="text-xs text-neutral-500">Explore</span>
                   </Link>
                 </li>
               ))}
               <li className="pt-1">
-                <Link
-                  ref={mobileCtaRef}
-                  href="/departures"
-                  onClick={() => setOpen(false)}
-                  className="
-                    flex items-center justify-center gap-2
-                    rounded-xl bg-neutral-900 px-3 py-2.5
-                    text-sm font-semibold text-white hover:bg-neutral-800
-                  "
+                <PrimaryButton
+                  href="https://wa.me/9607557042?text=Hi%2C%20I%27m%20interested%20in%20the%20Dive%20with%20Locals%20packages.%20My%20name%20is%20____%20and%20we%20are%20____%20certified%20divers."
+                  variant="emerald"
+                  size="lg"
                 >
-                  <CalendarRange size={16} />
-                  Reserve dates
-                </Link>
+                  WhatsApp us to book
+                </PrimaryButton>
               </li>
             </ul>
           </div>

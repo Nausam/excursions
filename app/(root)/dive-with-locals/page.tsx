@@ -178,7 +178,7 @@ export default function DiveWithLocalsPage() {
   }, []);
 
   return (
-    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16">
+    <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16 mt-10">
       <div
         ref={shellRef}
         className="space-y-10 rounded-[32px] bg-gradient-to-b from-sky-50/80 via-white to-sky-50/60 p-6 shadow-xl ring-1 ring-sky-100/60 md:space-y-12 md:p-10"

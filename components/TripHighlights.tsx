@@ -19,39 +19,39 @@ type Highlight = {
 
 const HIGHLIGHTS: readonly Highlight[] = [
   {
-    icon: PawPrint,
-    title: "Safari Trips",
+    icon: Mountain, // or a better icon later
+    title: "Excursion trips in Baa Atoll",
     bullets: [
-      "Sunrise & sunset drives with licensed rangers",
-      "Max 8 guests for better sightings",
-      "Water & snacks included; binoculars available",
+      "Sandbanks, uninhabited islands and turtle reefs",
+      "Small groups with local skippers and guides",
+      "Picnic lunches and swim stops built into each day",
     ],
-    img: "/images/safari.jpg",
-    imgAlt: "Safari jeep overlooking savannah at golden hour",
+    img: "/images/excursion.jpg",
+    imgAlt: "Boat anchored at a sandbank in Baa Atoll",
     accent: "amber",
   },
   {
-    icon: Mountain,
-    title: "Excursions",
+    icon: PawPrint,
+    title: "Liveaboard",
     bullets: [
-      "Hidden waterfalls & village markets",
-      "Local lunch spots hand-picked by guides",
-      "Photo stops and swim breaks built-in",
+      "Manta and dolphin safaris in Baa Atoll",
+      "14–18 guests per trip with local crew",
+      "Snorkelling gear and lifejackets included",
     ],
-    img: "/images/excursion.jpg",
-    imgAlt: "Hikers near a waterfall in lush forest",
+    img: "/images/safari.jpg",
+    imgAlt: "Guests on a safari boat watching dolphins",
     accent: "violet",
   },
   {
     icon: Waves,
-    title: "Local Diving",
+    title: "Dive with locals",
     bullets: [
-      "PADI dive masters & high-quality gear",
-      "Reef & wreck sites with 10–30m visibility",
-      "Shallow options for beginners available",
+      "Guided dives in Baa Atoll and Fuvahmulah",
+      "PADI dive masters and small dive groups",
+      "Options for both experienced and new divers",
     ],
     img: "/images/diving.jpg",
-    imgAlt: "Divers above a colorful coral reef",
+    imgAlt: "Divers exploring a Maldivian reef wall",
     accent: "sky",
   },
 ];
@@ -386,10 +386,10 @@ export default function TripHighlights() {
     >
       <div className="mx-auto mb-8 text-center md:w-3/4">
         <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-900">
-          Trip highlights
+          Where do we take you?
         </h2>
         <p className="section-sub mt-2 text-neutral-600">
-          A glimpse of what you’ll experience on each adventure.
+          Three ways to experience the Maldives with La Via Travels.
         </p>
       </div>
 

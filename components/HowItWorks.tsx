@@ -2,9 +2,8 @@
 "use client";
 
 import { gsap } from "gsap";
-import { ArrowRight, CalendarCheck, MailCheck, Wallet } from "lucide-react";
+import { CalendarCheck, MailCheck, Wallet } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
-import PrimaryButton from "./PrimaryButton";
 
 type Step = {
   icon: React.ElementType;
@@ -19,7 +18,7 @@ const STEPS: Step[] = [
   {
     icon: CalendarCheck,
     title: "Choose your trip & date",
-    desc: "Pick from Safari Trips, Excursions, or Local Diving and select an available date.",
+    desc: "Pick from Excursions, Diving, or Liveaboard and select an available date.",
     bg: "bg-amber-50",
     ring: "ring-amber-100",
     fg: "text-amber-700",
@@ -27,7 +26,7 @@ const STEPS: Step[] = [
   {
     icon: MailCheck,
     title: "Confirm your booking",
-    desc: "We’ll send a confirmation email instantly with your meeting point and trip details.",
+    desc: "Send us a Whatsapp or email with your details to reserve your spot.",
     bg: "bg-sky-50",
     ring: "ring-sky-100",
     fg: "text-sky-700",
@@ -389,7 +388,7 @@ export default function HowItWorks() {
       </div>
 
       {/* CTA */}
-      <div className="mt-10 flex justify-center" data-hiw-cta>
+      {/* <div className="mt-10 flex justify-center" data-hiw-cta>
         <PrimaryButton
           href="/departures"
           variant="sky"
@@ -398,7 +397,7 @@ export default function HowItWorks() {
         >
           See upcoming dates
         </PrimaryButton>
-      </div>
+      </div> */}
     </section>
   );
 }
