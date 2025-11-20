@@ -626,7 +626,7 @@ export default function ExcursionTripDetail({
             <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-900 ring-1 ring-sky-100">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
               <span>
-                Best season · May–October (manta &amp; whale shark activity)
+                Best season · May – November (manta &amp; whale shark activity)
               </span>
             </div>
           </div>
