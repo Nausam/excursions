@@ -97,17 +97,18 @@ export default function DiveWithLocalsPage() {
 
     const cleanups: Array<() => void> = [];
 
-    // Page shell fade / lift
-    gsap.killTweensOf(shell);
-    gsap.fromTo(
+    // make sure shell is always fully visible
+    gsap.set(shell, { opacity: 1 });
+
+    // only animate the lift, not opacity
+    const shellTween = gsap.fromTo(
       shell,
-      { y: 18, opacity: 0 },
+      { y: 18 },
       {
         y: 0,
-        opacity: 1,
         duration: 0.7,
         ease: "power3.out",
-        clearProps: "opacity,transform",
+        clearProps: "transform",
       }
     );
 
@@ -173,7 +174,7 @@ export default function DiveWithLocalsPage() {
 
     return () => {
       cleanups.forEach((fn) => fn());
-      gsap.killTweensOf(shell);
+      shellTween.kill();
     };
   }, []);
 

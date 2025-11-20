@@ -484,17 +484,18 @@ export default function DiveInLiveaboardPage() {
 
     const cleanups: Array<() => void> = [];
 
-    // Page shell fade / lift (safe)
-    gsap.killTweensOf(shell);
-    gsap.fromTo(
+    // Make sure the shell is never stuck transparent
+    gsap.set(shell, { opacity: 1 });
+
+    // Only animate vertical lift, not opacity
+    const shellTween = gsap.fromTo(
       shell,
-      { y: 18, opacity: 0 },
+      { y: 18 },
       {
         y: 0,
-        opacity: 1,
         duration: 0.7,
         ease: "power3.out",
-        clearProps: "opacity,transform",
+        clearProps: "transform",
       }
     );
 
@@ -577,7 +578,7 @@ export default function DiveInLiveaboardPage() {
 
     return () => {
       cleanups.forEach((fn) => fn());
-      gsap.killTweensOf(shell);
+      shellTween.kill();
     };
   }, []);
 
