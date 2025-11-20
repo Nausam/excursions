@@ -311,19 +311,22 @@ export default function ExcursionTripDetail({
 
     const cleanups: Array<() => void> = [];
 
-    gsap.killTweensOf(el);
-    gsap.fromTo(
+    // make sure shell is fully visible by default
+    gsap.set(el, { opacity: 1 });
+
+    // only animate the lift, not the opacity
+    const shellTween = gsap.fromTo(
       el,
-      { y: 18, opacity: 0 },
+      { y: 18 },
       {
         y: 0,
-        opacity: 1,
         duration: 0.7,
         ease: "power3.out",
-        clearProps: "opacity,transform",
+        clearProps: "transform",
       }
     );
 
+    // --- keep the rest of your IntersectionObserver logic exactly as it is ---
     if (summaryRef.current) {
       const section = summaryRef.current;
       const cleanup = observeOnce(
@@ -442,7 +445,7 @@ export default function ExcursionTripDetail({
 
     return () => {
       cleanups.forEach((fn) => fn());
-      gsap.killTweensOf(el);
+      shellTween.kill();
     };
   }, []);
 
