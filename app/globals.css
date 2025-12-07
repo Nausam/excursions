@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+* {
+  scroll-behavior: smooth;
+  -ms-overflow-style: hidden;
+}
+
 @source "./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./pages/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}";
 
 @custom-variant dark (&:is(.dark *));
@@ -115,11 +120,34 @@
 }
 
 @layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    /* or hidden */
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* Chrome, Safari, Edge */
+  *::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -130,12 +158,6 @@
   --font-sans: var(--font-host), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     "Apple Color Emoji", "Segoe UI Emoji";
-}
-
-html,
-body,
-#__next {
-  height: 100%;
 }
 
 @layer utilities {
