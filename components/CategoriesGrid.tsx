@@ -27,7 +27,7 @@ const CATEGORIES: Cat[] = [
     title: "Dive with Locals",
     blurb:
       "Tiger shark dives in Fuvahmulah or manta-filled reefs of Baa Atoll.",
-    img: "/images/dive.jpg",
+    img: "/images/local-dive.jpg",
   },
   {
     slug: "liveaboard-diving",

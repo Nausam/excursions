@@ -10,15 +10,15 @@ const hostGrotesk = Host_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"), // ⬅️ change to your real domain
+  metadataBase: new URL("https://laviamaldives.com"),
   title: {
-    default: "La Via Travels – Maldives Excursions & Diving",
-    template: "%s | La Via Travels",
+    default: "La Via Travel & Tours – Maldives Excursions & Diving",
+    template: "%s | La Via Travel & Tours",
   },
   description:
-    "La Via Travels offers curated Maldives excursions, island safaris, liveaboard trips and local diving with trusted Maldivian guides. Plan your next ocean adventure with flexible, small-group experiences.",
+    "La Via Travel & Tours offers curated Maldives excursions, island safaris, liveaboard trips and local diving with trusted Maldivian guides. Plan your next ocean adventure with flexible, small-group experiences.",
   keywords: [
-    "La Via Travels",
+    "La Via Travel & Tours",
     "Maldives excursions",
     "Maldives diving",
     "Maldives liveaboard",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     "island hopping Maldives",
     "local guides Maldives",
   ],
-  applicationName: "La Via Travels",
-  authors: [{ name: "La Via Travels" }],
-  creator: "La Via Travels",
-  publisher: "La Via Travels",
+  applicationName: "La Via Travel & Tours",
+  authors: [{ name: "LLa Via Travel & Tours" }],
+  creator: "La Via Travel & Tours",
+  publisher: "La Via Travel & Tours",
   robots: {
     index: true,
     follow: true,
@@ -47,26 +47,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "La Via Travels – Maldives Excursions, Safaris & Diving",
+    title: "La Via Travel & Tours – Maldives Excursions, Safaris & Diving",
     description:
       "Book Maldives excursions, liveaboards and local diving with La Via Travels. Small groups, trusted guides and flexible, ocean-focused itineraries.",
-    siteName: "La Via Travels",
-    url: "https://example.com", // ⬅️ update to real domain
+    siteName: "La Via Travel & Tours",
+    url: "https://laviamaldives.com",
     images: [
       {
-        url: "/og/la-via-travels-og.jpg", // ⬅️ drop in your OG image
+        url: "/images/excursion.png",
         width: 1200,
         height: 630,
-        alt: "La Via Travels – Maldives excursions, safaris and diving",
+        alt: "La Via Travel & Tours – Maldives excursions, safaris and diving",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "La Via Travels – Maldives Excursions & Diving",
+    title: "La Via Travel & Tours – Maldives Excursions & Diving",
     description:
-      "Curated Maldives excursions, island safaris, liveaboards and local diving with La Via Travels.",
-    images: ["/og/la-via-travels-og.jpg"],
+      "Curated Maldives excursions, island safaris, liveaboards and local diving with La Via Travel & Tours.",
+    images: ["/images/excursion.png"],
   },
   icons: {
     icon: "/favicon.ico",
