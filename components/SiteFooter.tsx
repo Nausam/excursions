@@ -10,6 +10,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef } from "react";
 
@@ -273,37 +274,43 @@ export default function SiteFooter() {
   return (
     <footer ref={root} className="mt-8 border-t border-neutral-200/60 bg-white">
       <div className="mx-auto w-[min(1400px,94vw)] py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Main grid – with dividers on mobile for neat stacking */}
+        <div className="grid gap-8 divide-y divide-neutral-200 sm:divide-y-0 sm:grid-cols-2 lg:grid-cols-4 sm:gap-10">
           {/* Brand + blurb */}
-          <div className="ft-col">
-            <div className="ft-brand flex items-center gap-2">
-              <span className="ft-brand-dot inline-block h-3.5 w-3.5 rounded-full bg-sky-500" />
-              <span className="ft-brand-name text-lg font-extrabold text-neutral-900">
-                Just Trip
-              </span>
+          <div className="ft-col flex flex-col items-center pt-6 text-center sm:items-start sm:text-left sm:pt-0">
+            <div className="ft-brand flex flex-col items-center gap-3 sm:flex-row sm:items-center">
+              <Image
+                src="/images/logo.png"
+                width={200}
+                height={200}
+                alt="La Via Maldives logo"
+                className="h-auto w-auto"
+                priority={false}
+                unoptimized
+              />
             </div>
-            <p className="mt-3 text-sm text-neutral-600">
-              Authentic safaris, excursions, and local diving with licensed
-              guides. Reserve now, pay on arrival.
+            <p className="mt-3 max-w-xs text-sm text-neutral-600">
+              Ocean safaris, liveaboard trips, and local island adventures with
+              licensed Maldivian guides.
             </p>
 
             <div className="ft-social mt-4 flex items-center gap-3 text-neutral-600">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/laviamaldives"
                 aria-label="Instagram"
                 className="rounded-full p-2 hover:bg-neutral-100"
               >
                 <Instagram size={18} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/laviamaldives"
                 aria-label="Facebook"
                 className="rounded-full p-2 hover:bg-neutral-100"
               >
                 <Facebook size={18} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@laviamaldives"
                 aria-label="YouTube"
                 className="rounded-full p-2 hover:bg-neutral-100"
               >
@@ -313,49 +320,44 @@ export default function SiteFooter() {
           </div>
 
           {/* Trips */}
-          <div className="ft-col">
+          <div className="ft-col pt-6 text-center sm:pt-0 sm:text-left">
             <h4 className="text-sm font-semibold text-neutral-900">Trips</h4>
             <ul className="ft-links mt-3 space-y-2 text-sm text-neutral-600">
               <li>
-                <Link href="/safaris" className="hover:text-neutral-900">
-                  Safari Trips
+                <Link href="/liveaboards" className="hover:text-neutral-900">
+                  Liveaboard safaris
                 </Link>
               </li>
               <li>
                 <Link href="/excursions" className="hover:text-neutral-900">
-                  Excursions
+                  Day trips &amp; excursions
                 </Link>
               </li>
               <li>
                 <Link href="/diving" className="hover:text-neutral-900">
-                  Local Diving
-                </Link>
-              </li>
-              <li>
-                <Link href="/departures" className="hover:text-neutral-900">
-                  Calendar
+                  Local diving
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Company */}
-          <div className="ft-col">
+          <div className="ft-col pt-6 text-center sm:pt-0 sm:text-left">
             <h4 className="text-sm font-semibold text-neutral-900">Company</h4>
             <ul className="ft-links mt-3 space-y-2 text-sm text-neutral-600">
               <li>
-                <Link href="/about" className="hover:text-neutral-900">
+                <Link href="#about" className="hover:text-neutral-900">
                   About us
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-neutral-900">
+                <Link href="#faq" className="hover:text-neutral-900">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/safety" className="hover:text-neutral-900">
-                  Safety & qualifications
+                <Link href="#safety" className="hover:text-neutral-900">
+                  Safety &amp; standards
                 </Link>
               </li>
               <li>
@@ -367,17 +369,17 @@ export default function SiteFooter() {
           </div>
 
           {/* Contact */}
-          <div className="ft-col">
+          <div className="ft-col pt-6 text-center sm:pt-0 sm:text-left">
             <h4 className="text-sm font-semibold text-neutral-900">Contact</h4>
             <ul className="ft-contact mt-3 space-y-2 text-sm text-neutral-700">
-              <li className="flex items-center gap-2">
-                <Mail size={16} /> hello@justtrip.example
+              <li className="flex items-center justify-center gap-2 sm:justify-start">
+                <Mail size={16} /> hello@laviamaldives.com
               </li>
-              <li className="flex items-center gap-2">
-                <Phone size={16} /> +1 (234) 567-890
+              <li className="flex items-center justify-center gap-2 sm:justify-start">
+                <Phone size={16} /> +960 755 7042
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin size={16} /> Main Gate Rd, Adventure Park
+              <li className="flex items-center justify-center gap-2 sm:justify-start">
+                <MapPin size={16} /> Malé, Maldives
               </li>
             </ul>
           </div>
@@ -385,9 +387,9 @@ export default function SiteFooter() {
 
         {/* bottom bar */}
         <div className="ft-bottom mt-8 flex flex-col items-center justify-between gap-3 border-t border-neutral-200/60 pt-6 text-sm text-neutral-500 sm:flex-row">
-          <p>
-            © <span className="ft-year">{new Date().getFullYear()}</span> Just
-            Trip. All rights reserved.
+          <p className="text-center sm:text-left">
+            © <span className="ft-year">{new Date().getFullYear()}</span> La Via
+            Maldives. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="/terms" className="hover:text-neutral-800">

@@ -33,8 +33,8 @@ const STEPS: Step[] = [
   },
   {
     icon: Wallet,
-    title: "Meet your guide & pay on arrival",
-    desc: "Show up at the pickup point on the day. No online payments — settle in person.",
+    title: "Meet your guide",
+    desc: "Show up at the pickup point and enjoy once-in-a-lifetime experiences.",
     bg: "bg-emerald-50",
     ring: "ring-emerald-100",
     fg: "text-emerald-700",
@@ -261,9 +261,7 @@ export default function HowItWorks() {
           Book Your Next Adventure
         </h2>
         <p className="mx-auto mt-2 max-w-[60ch] text-neutral-600">
-          Reserve online now —{" "}
-          <span className="font-semibold text-neutral-800">pay on arrival</span>
-          .
+          Reserve your spot now!
         </p>
       </div>
 

@@ -23,7 +23,7 @@ type LiveaboardRoute = {
 };
 
 const LIVEABOARD_FACTS = {
-  price: "From $1400 per person",
+  price: "",
   duration: "7 nights on board",
   cabins: "11 cabins • Max ~22 guests",
   base: "Central & Southern Maldives (multiple routes)",
@@ -633,13 +633,14 @@ export default function DiveInLiveaboardPage() {
             <div className="absolute inset-0 rounded-[26px] bg-gradient-to-br from-sky-400/40 via-cyan-500/40 to-emerald-400/35 blur-2" />
             <div className="relative h-full overflow-hidden rounded-md bg-slate-900/80 ring-1 ring-sky-200/80 shadow-md">
               <Image
-                src="/images/safari.jpg"
+                src="/images/liveaboard.jpg"
                 alt="Liveaboard boat cruising over turquoise Maldivian water"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
+                unoptimized
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+              {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" /> */}
               <div className="absolute left-4 bottom-4 flex items-center gap-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-900 shadow-lg ring-1 ring-sky-100/70 backdrop-blur">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-sky-700 text-[11px] font-bold">
                   Adora

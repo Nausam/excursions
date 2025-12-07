@@ -10,28 +10,28 @@ type FaqItem = { q: string; a: string };
 
 const FAQS: FaqItem[] = [
   {
-    q: "How do reservations work if I pay on arrival?",
-    a: "Reserve online and confirm via the email we send you. Your seats are held and you pay at the meeting point on the day. No online payment required.",
+    q: "How can I book?",
+    a: "Choose your trip and dates, then send us a WhatsApp with your full name (and your group’s names if any). We’ll confirm availability within 24 hours and send you a link to pay the deposit.",
   },
   {
-    q: "Can I cancel or reschedule?",
-    a: "Yes—free changes up to 48 hours before departure. Inside 48 hours we’ll try to help, but availability may be limited.",
+    q: "Do I need to be a diver or swimmer?",
+    a: "You don’t need to be a certified diver, but you must be comfortable swimming in the ocean. This is an ocean safari and time in the water is a big part of the experience.",
   },
   {
-    q: "What should I bring for a safari?",
-    a: "Closed shoes, a light jacket, hat, sunscreen, and a water bottle. We provide additional water and basic snacks.",
+    q: "What are the sleeping arrangements?",
+    a: "All rooms are shared between 2 people. Couples or friends stay together, and solo travellers are paired with another guest of the same gender. Private rooms can be requested at an extra cost.",
   },
   {
-    q: "Is equipment provided for diving?",
-    a: "Yes—tanks, weights, and rental gear are available. Bring certification cards if you have them; intro options exist for beginners.",
+    q: "How does payment work?",
+    a: "You pay 50% to secure your spot. The remaining 50% is due at least 15 days before arrival. We’ll send a secure payment link with all the details.",
   },
   {
-    q: "Are kids allowed?",
-    a: "Excursions: most are family-friendly. Safaris: age 6+ recommended. Diving: minimum age varies by program—contact us for guidance.",
+    q: "Can I change or cancel my booking?",
+    a: "Date changes and cancellations are possible up to 30 days before departure, subject to availability and our cancellation policy. Just message us on WhatsApp and we’ll do our best to help.",
   },
   {
-    q: "What happens in bad weather?",
-    a: "Safety first. We may delay, re-route, or reschedule. If we must cancel, you can move to another date at no cost.",
+    q: "What should I bring?",
+    a: "Swimwear, reef-safe sunscreen, sunglasses, a hat, light clothing, and any personal medication. We’ll provide the essentials on board and share a detailed packing list after you book.",
   },
 ];
 
@@ -270,7 +270,7 @@ export default function Faq() {
   }, []);
 
   return (
-    <section className="mx-auto w-[min(1400px,94vw)] py-10 md:py-14">
+    <section id="faq" className="mx-auto w-[min(1400px,94vw)] py-10 md:py-14">
       <div ref={shellRef} className="mx-auto w-[min(1400px,94vw)]">
         {/* Header */}
         <div className="mx-auto mb-8 text-center md:w-3/4">
@@ -310,7 +310,7 @@ export default function Faq() {
               size="md"
               leadingIcon={Phone}
             >
-              +960 1234567
+              WhatsApp
             </PrimaryButton>
           </div>
         </div>

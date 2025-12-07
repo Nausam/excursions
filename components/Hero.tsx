@@ -2,7 +2,6 @@
 "use client";
 
 import gsap from "gsap";
-import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 
 export default function Hero() {
@@ -115,45 +114,14 @@ export default function Hero() {
       <div ref={root} className="relative mx-auto w-[min(1400px,94vw)] pb-20">
         <div className="relative overflow-hidden rounded-[5px]">
           <div className="relative w-full aspect-[16/9]">
-            <Image
-              src="/hero.jpg"
-              alt="Scenic mountains and lake"
-              fill
-              priority
-              sizes="(max-width: 1200px) 94vw, 1200px"
-              className="object-cover"
+            <video
+              src="/hero.mp4"
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
-          </div>
-
-          {/* Heading overlay */}
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="text-center leading-none">
-              <p
-                ref={headingLine}
-                className="text-white font-extrabold tracking-wide text-[clamp(28px,6.2vw,76px)] drop-shadow-[0_4px_16px_rgba(0,0,0,.35)]"
-              >
-                LEAVE PLANS, MAKE
-              </p>
-
-              <div className="relative mt-2 inline-block">
-                {/* Main word — crisp */}
-                <p
-                  ref={wordMain}
-                  className="relative z-10 font-extrabold text-[clamp(72px,15vw,200px)] text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-200 drop-shadow-[0_8px_32px_rgba(0,0,0,.25)]"
-                >
-                  MEMORIES
-                </p>
-
-                {/* Subtle duplicate behind — no blur/blend */}
-                <p
-                  ref={wordGlow}
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 font-extrabold text-[clamp(72px,15vw,200px)] text-white/14 scale-[1.01]"
-                >
-                  MEMORIES
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 

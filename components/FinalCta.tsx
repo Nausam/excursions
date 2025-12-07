@@ -2,7 +2,7 @@
 "use client";
 
 import { gsap } from "gsap";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
 import PrimaryButton from "./PrimaryButton";
 
@@ -124,8 +124,8 @@ export default function FinalCta() {
           </h2>
 
           <p data-cta-copy className="mt-2 max-w-2xl text-neutral-700">
-            Limited seats each month. Reserve online in seconds —{" "}
-            <span className="font-semibold">pay on arrival</span>.
+            Limited seats each month. Lock in your dates and we’ll handle the
+            rest.
           </p>
 
           <div
@@ -133,21 +133,20 @@ export default function FinalCta() {
             className="mt-6 flex flex-col gap-3 sm:flex-row"
           >
             <PrimaryButton
-              href="/departures"
+              href="/contact"
               variant="sky"
               size="md"
-              trailingIcon={ArrowRight}
-            >
-              Upcoming dates
-            </PrimaryButton>
-
-            <PrimaryButton
-              href="/contact"
-              variant="emerald"
-              size="md"
-              trailingIcon={Mail}
+              leadingIcon={Mail}
             >
               Email us
+            </PrimaryButton>
+            <PrimaryButton
+              href="tel:+9601234567"
+              variant="emerald"
+              size="md"
+              leadingIcon={Phone}
+            >
+              WhatsApp
             </PrimaryButton>
           </div>
         </div>

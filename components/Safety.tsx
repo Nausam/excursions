@@ -287,6 +287,7 @@ export default function Safety() {
 
   return (
     <section
+      id="safety"
       ref={rootRef}
       className="mx-auto w-[min(1400px,94vw)] py-12 md:py-16"
     >
@@ -309,9 +310,9 @@ export default function Safety() {
         ))}
       </div>
 
-      <p className="mt-7 text-center text-sm text-neutral-500">
+      {/* <p className="mt-7 text-center text-sm text-neutral-500">
         Full policy details are available on request and at check-in.
-      </p>
+      </p> */}
     </section>
   );
 }

@@ -236,8 +236,9 @@ export default function DiveWithLocalsPage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
                 priority={false}
+                unoptimized
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+              {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" /> */}
               <div className="absolute left-4 bottom-4 flex items-center gap-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-900 shadow-lg ring-1 ring-sky-100/70 backdrop-blur">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-sky-700 text-[11px] font-bold">
                   PADI

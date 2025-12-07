@@ -20,21 +20,21 @@ const CATEGORIES: Cat[] = [
     title: "Excursion Trips in Baa Atoll",
     blurb:
       "Hanifaru Bay mantas & whale sharks • Stay with locals on Dharavandhoo.",
-    img: "/images/safari.jpg",
+    img: "/images/excursion.png",
   },
   {
     slug: "dive-with-locals",
     title: "Dive with Locals",
     blurb:
       "Tiger shark dives in Fuvahmulah or manta-filled reefs of Baa Atoll.",
-    img: "/images/excursion.jpg",
+    img: "/images/dive.jpg",
   },
   {
     slug: "liveaboard-diving",
     title: "Dive in Liveaboard",
     blurb:
       "Week-long liveaboard routes like Best of Maldives, Deep South & North Fiesta.",
-    img: "/images/diving.jpg",
+    img: "/images/liveaboard.jpg",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function TopExcursions() {
           Top Excursions
         </h2>
         <p className="mt-3 text-neutral-600">
-          Reserve now, pay on arrival. Limited seats each month.
+          Reserve you next unforgettable adventure with our curated selection
         </p>
       </div>
 
@@ -156,6 +156,7 @@ export default function TopExcursions() {
                   sizes="(max-width: 1024px) 50vw, 33vw"
                   className="object-cover scale-[1.02] transition-transform duration-500 hover:scale-[1.05]"
                   priority={false}
+                  unoptimized
                 />
               </div>
 

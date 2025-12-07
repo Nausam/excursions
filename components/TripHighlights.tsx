@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// components/TripHighlights.tsx
 "use client";
 
 import { gsap } from "gsap";
@@ -26,7 +25,7 @@ const HIGHLIGHTS: readonly Highlight[] = [
       "Small groups with local skippers and guides",
       "Picnic lunches and swim stops built into each day",
     ],
-    img: "/images/excursion.jpg",
+    img: "/images/excursion.png",
     imgAlt: "Boat anchored at a sandbank in Baa Atoll",
     accent: "amber",
   },
@@ -38,7 +37,7 @@ const HIGHLIGHTS: readonly Highlight[] = [
       "14–18 guests per trip with local crew",
       "Snorkelling gear and lifejackets included",
     ],
-    img: "/images/safari.jpg",
+    img: "/images/liveaboard.jpg",
     imgAlt: "Guests on a safari boat watching dolphins",
     accent: "violet",
   },
@@ -329,9 +328,9 @@ function Tile({
                   </span>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-neutral-500">
+              {/* <p className="mt-3 text-xs text-neutral-500">
                 Reserve now, pay on arrival. Free cancellation up to 48h.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -389,7 +388,7 @@ export default function TripHighlights() {
           Where do we take you?
         </h2>
         <p className="section-sub mt-2 text-neutral-600">
-          Three ways to experience the Maldives with La Via Travels.
+          Three ways to experience the Maldives with La Via Maldives.
         </p>
       </div>
 

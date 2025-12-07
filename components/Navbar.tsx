@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import PrimaryButton from "./PrimaryButton";
+import Image from "next/image";
 
 const LINKS = [
   { label: "Home", href: "/" },
@@ -153,10 +154,19 @@ export default function Navbar() {
         <div className="relative flex h-14 items-center justify-between gap-3">
           {/* Brand chip */}
           <Link ref={brandRef} href="/" className="flex items-center gap-2">
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 ring-2 ring-white shadow" />
+            {/* <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 ring-2 ring-white shadow" />
             <span className="text-[15px] font-extrabold tracking-wide">
-              La Via Travels
-            </span>
+              La Via Maldives
+            </span> */}
+            <Image
+              src="/images/logo.png"
+              width={120}
+              height={120}
+              alt="Divers exploring a Maldivian reef"
+              className="object-cover"
+              priority={false}
+              unoptimized
+            />
           </Link>
 
           {/* Desktop links */}

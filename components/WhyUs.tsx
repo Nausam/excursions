@@ -179,8 +179,7 @@ export default function WhyUs() {
           Why travel with us
         </h2>
         <p className="mt-2 text-neutral-600">
-          Real adventures, run by licensed locals. Reserve online, pay on
-          arrival.
+          Real adventures, run by licensed locals. Reserve online in minutes.
         </p>
       </div>
 
