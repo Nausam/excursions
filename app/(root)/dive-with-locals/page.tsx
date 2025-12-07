@@ -457,7 +457,7 @@ export default function DiveWithLocalsPage() {
                   variant="emerald"
                   size="lg"
                 >
-                  WhatsApp us to book
+                  Contact Us
                 </PrimaryButton>
               </div>
             </div>

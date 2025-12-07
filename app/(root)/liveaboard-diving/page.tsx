@@ -887,7 +887,7 @@ export default function DiveInLiveaboardPage() {
                   variant="emerald"
                   size="lg"
                 >
-                  WhatsApp us to book
+                  Contact Us
                 </PrimaryButton>
               </div>
             </div>
