@@ -2,7 +2,13 @@
 
 import PrimaryButton from "@/components/PrimaryButton";
 import gsap from "gsap";
-import { CalendarDays, DollarSign, MapPin, Waves } from "lucide-react";
+import {
+  CalendarDays,
+  DollarSign,
+  MapPin,
+  PlusCircle,
+  Waves,
+} from "lucide-react";
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 
@@ -238,16 +244,18 @@ export default function DiveWithLocalsPage() {
                 priority={false}
                 unoptimized
               />
-              {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" /> */}
-              <div className="absolute left-4 bottom-4 flex items-center gap-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-900 shadow-lg ring-1 ring-sky-100/70 backdrop-blur">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-sky-700 text-[11px] font-bold">
-                  PADI
-                </span>
-                <div className="leading-tight">
-                  <p>Guided fun dives</p>
-                  <p className="text-[11px] text-slate-500">
-                    Local DM &amp; small groups
-                  </p>
+
+              <div className="absolute left-4 bottom-4">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 px-3.5 py-1.5 text-xs font-medium text-white shadow-lg ring-1 ring-white/60 backdrop-blur">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/40">
+                    <Waves className="h-4 w-4" />
+                  </span>
+                  <div className="leading-tight">
+                    <p className="font-semibold">Guided fun dives</p>
+                    <p className="text-[11px] text-sky-50/90">
+                      Local DM &amp; small groups
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -319,18 +327,22 @@ export default function DiveWithLocalsPage() {
                     </div>
 
                     {/* Optional add-ons */}
-                    <div className="space-y-2 border-t border-emerald-50 pt-3">
+                    <div className="space-y-2 border-t border-emerald-50 pt-4">
                       <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-700">
                         Optional add-ons
                       </p>
-                      <ul className="space-y-1.5 text-sm text-slate-700">
+
+                      <div className="flex flex-wrap gap-2">
                         {pkg.addOns.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-500" />
+                          <div
+                            key={item}
+                            className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs md:text-sm font-medium text-sky-900 ring-1 ring-sky-100 shadow-sm"
+                          >
+                            <PlusCircle className="h-4 w-4 text-emerald-500" />
                             <span>{item}</span>
-                          </li>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
 
@@ -441,7 +453,7 @@ export default function DiveWithLocalsPage() {
               </div>
               <div className="flex flex-col items-stretch gap-1 md:items-end">
                 <PrimaryButton
-                  href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Maldives%20liveaboard.%20Here%20are%20my%20dates%20and%20number%20of%20divers%3A"
+                  href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Dive%20with%20Locals%20package%20in%20the%20Maldives.%20We%20are%20____%20certified%20divers%20and%20our%20dates%20are%20____"
                   variant="emerald"
                   size="lg"
                 >

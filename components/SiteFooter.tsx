@@ -324,17 +324,26 @@ export default function SiteFooter() {
             <h4 className="text-sm font-semibold text-neutral-900">Trips</h4>
             <ul className="ft-links mt-3 space-y-2 text-sm text-neutral-600">
               <li>
-                <Link href="/liveaboards" className="hover:text-neutral-900">
+                <Link
+                  href="/liveaboard-diving"
+                  className="hover:text-neutral-900"
+                >
                   Liveaboard safaris
                 </Link>
               </li>
               <li>
-                <Link href="/excursions" className="hover:text-neutral-900">
+                <Link
+                  href="/excursions-baa-atoll"
+                  className="hover:text-neutral-900"
+                >
                   Day trips &amp; excursions
                 </Link>
               </li>
               <li>
-                <Link href="/diving" className="hover:text-neutral-900">
+                <Link
+                  href="/dive-with-locals"
+                  className="hover:text-neutral-900"
+                >
                   Local diving
                 </Link>
               </li>

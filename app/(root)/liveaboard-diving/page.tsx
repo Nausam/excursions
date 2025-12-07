@@ -371,9 +371,9 @@ function RouteCard({
           {/* HEADER */}
           <header className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
             <div className="space-y-1">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+              {/* <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
                 Liveaboard route
-              </p>
+              </p> */}
               <h3 className="text-lg font-extrabold text-slate-900 md:text-xl">
                 {route.name}
               </h3>
@@ -463,9 +463,9 @@ function RouteCard({
           </div>
 
           {/* FOOTNOTE */}
-          <p className="pt-1 text-[11px] text-slate-500">
+          {/* <p className="pt-1 text-[11px] text-slate-500">
             Tap to view (or hide) the full day-by-day plan for this route.
-          </p>
+          </p> */}
         </div>
       </article>
     </div>
@@ -613,17 +613,17 @@ export default function DiveInLiveaboardPage() {
             <p className="max-w-fll text-sm leading-relaxed text-slate-700 md:text-base">
               Dive into crystal-clear channels, manta cleaning stations and
               sharky drop-offs while living on board a comfortable Maldivian
-              liveaboard. Wake up, dive, eat, repeat – with sunset views from
-              the sundeck and new sites every day.
+              liveaboard. Wake up, dive, eat, repeat with sunset views from the
+              sundeck and new sites every day.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <PrimaryButton
-                href="https://wa.me/9607557042?text=Hi%2C%20I%27m%20interested%20in%20the%20Dive%20in%20Liveaboard%20trips.%20Can%20you%20share%20upcoming%20dates%20and%20routes%3F"
+                href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Maldives%20liveaboard%20trip.%20We%20are%20____%20divers%20and%20our%20preferred%20dates%20are%20____."
                 variant="emerald"
                 size="lg"
               >
-                Chat on WhatsApp
+                WhatsApp us to book
               </PrimaryButton>
             </div>
           </div>
@@ -640,16 +640,28 @@ export default function DiveInLiveaboardPage() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 unoptimized
               />
-              {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" /> */}
-              <div className="absolute left-4 bottom-4 flex items-center gap-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-900 shadow-lg ring-1 ring-sky-100/70 backdrop-blur">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-sky-700 text-[11px] font-bold">
-                  Adora
-                </span>
-                <div className="leading-tight">
-                  <p>123 ft tri-deck liveaboard</p>
-                  <p className="text-[11px] text-slate-500">
-                    11 cabins • Sundeck • Indoor lounge
-                  </p>
+
+              <div className="absolute left-4 bottom-4">
+                {/* gradient frame */}
+                <div className="inline-flex rounded-full bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 p-[2px] shadow-xl shadow-sky-900/30">
+                  {/* glass inner pill */}
+                  <div className="flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs md:text-sm font-medium text-white ring-1 ring-white/40 backdrop-blur-md">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/14 ring-1 ring-white/40">
+                      <MapPin className="h-4 w-4" />
+                    </span>
+
+                    <div className="leading-tight">
+                      {/* <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-sky-50/90">
+                        Adora
+                      </p> */}
+                      <p className="text-[11px] md:text-xs font-semibold">
+                        123 ft tri-deck liveaboard
+                      </p>
+                      <p className="text-[10px] text-sky-50/80">
+                        11 cabins • Sundeck • Indoor lounge
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -871,7 +883,7 @@ export default function DiveInLiveaboardPage() {
               </div>
               <div className="flex flex-col items-stretch gap-1 md:items-end">
                 <PrimaryButton
-                  href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Maldives%20liveaboard.%20Here%20are%20my%20dates%20and%20number%20of%20divers%3A"
+                  href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Maldives%20liveaboard%20trip.%20We%20are%20____%20divers%20and%20our%20preferred%20dates%20are%20____."
                   variant="emerald"
                   size="lg"
                 >

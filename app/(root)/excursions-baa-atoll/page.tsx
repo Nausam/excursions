@@ -20,7 +20,7 @@ const HERO: HeroConfig = {
   titleHighlight: "Hanifaru Bay mantas,",
   titleRest: "whale sharks & local island life.",
   description:
-    "Stay on Dharavandhoo, a lived-in local island in the heart of the UNESCO Biosphere Reserve. Spend your days chasing mantas, whale sharks and dolphins—then wind down with sunsets, beach BBQs and slow island evenings.",
+    "Stay on Dharavandhoo, a lived-in local island in the heart of the UNESCO Biosphere Reserve. Spend your days chasing mantas, whale sharks and dolphins. Then wind down with sunsets, beach BBQs and slow island evenings.",
   imageSrc: "/images/excursion.png",
   imageAlt: "A boat crossing the turquoise water of Baa Atoll",
   routeChipLabel: "Baa",

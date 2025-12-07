@@ -2,8 +2,8 @@
 
 import PrimaryButton from "@/components/PrimaryButton";
 import gsap from "gsap";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { useLayoutEffect, useRef } from "react";
+import { Check, Clock, Copy, Mail, MessageCircle, Phone } from "lucide-react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 /* ---------- IntersectionObserver helper ---------- */
 function observeOnce(
@@ -23,10 +23,45 @@ function observeOnce(
   return () => io.disconnect();
 }
 
+/* ---------- Small copy button ---------- */
+function CopyButton({ value }: { value: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="inline-flex items-center gap-1 rounded-full bg-slate-100/80 px-2.5 py-1 text-[11px] font-medium text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100 hover:ring-slate-300 transition"
+      aria-label={copied ? "Copied" : "Copy to clipboard"}
+    >
+      {copied ? (
+        <>
+          <Check className="h-3 w-3" />
+          <span>Copied</span>
+        </>
+      ) : (
+        <>
+          <Copy className="h-3 w-3" />
+          <span>Copy</span>
+        </>
+      )}
+    </button>
+  );
+}
+
 export default function ContactPage() {
   const shellRef = useRef<HTMLDivElement | null>(null);
   const methodsRef = useRef<HTMLElement | null>(null);
-  const infoRef = useRef<HTMLElement | null>(null);
 
   useLayoutEffect(() => {
     const shell = shellRef.current;
@@ -34,7 +69,6 @@ export default function ContactPage() {
 
     const cleanups: Array<() => void> = [];
 
-    // Main shell
     gsap.killTweensOf(shell);
     gsap.fromTo(
       shell,
@@ -48,7 +82,6 @@ export default function ContactPage() {
       }
     );
 
-    // Contact methods cards
     if (methodsRef.current) {
       const sec = methodsRef.current;
       const cleanup = observeOnce(
@@ -70,29 +103,14 @@ export default function ContactPage() {
       cleanups.push(cleanup);
     }
 
-    // Info row
-    if (infoRef.current) {
-      const sec = infoRef.current;
-      const cleanup = observeOnce(
-        sec,
-        () => {
-          gsap.from(sec, {
-            opacity: 0,
-            y: 16,
-            duration: 0.55,
-            ease: "power3.out",
-          });
-        },
-        { rootMargin: "0px 0px -12% 0px" }
-      );
-      cleanups.push(cleanup);
-    }
-
     return () => {
       cleanups.forEach((fn) => fn());
       gsap.killTweensOf(shell);
     };
   }, []);
+
+  const phoneNumber = "+960 755 7042";
+  const emailAddress = "hello@laviamaldives.com";
 
   return (
     <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16 mt-10">
@@ -105,10 +123,6 @@ export default function ContactPage() {
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-sky-100/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-900 ring-1 ring-sky-200 shadow-sm">
               <span>Contact &amp; bookings</span>
-              <span className="h-1 w-1 rounded-full bg-sky-500" />
-              <span className="normal-case text-[11px] font-medium tracking-normal text-sky-800">
-                WhatsApp • Email • Quick questions
-              </span>
             </div>
 
             <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl lg:text-5xl">
@@ -122,10 +136,8 @@ export default function ContactPage() {
             </h1>
 
             <p className="max-w-full text-sm leading-relaxed text-slate-700 md:text-base">
-              Tell us your dates, number of divers and what kind of experience
-              you&apos;re after — tiger sharks, mantas, liveaboard or local
-              island diving. We&apos;ll reply with options that match your
-              level, budget and travel window.
+              Message us with your dates and number of divers and we&apos;ll
+              send you the best options for your level and budget.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600 md:text-[13px]">
@@ -135,17 +147,17 @@ export default function ContactPage() {
               </div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 ring-1 ring-slate-200 shadow-sm">
                 <Phone className="h-3.5 w-3.5 text-emerald-600" />
-                <span>WhatsApp preferred for quick questions</span>
+                <span>WhatsApp preferred</span>
               </div>
             </div>
           </div>
 
-          {/* Small contact summary card */}
+          {/* Compact contact summary card */}
           <div className="card-ambient card-ambient-slate-sky p-5 shadow-md">
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">
-              Main contact details
+              Main contact
             </h2>
-            <div className="mt-3 space-y-3 text-sm text-slate-700">
+            <div className="mt-4 space-y-4 text-sm text-slate-700">
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-50 text-sky-600 ring-1 ring-sky-100">
                   <MessageCircle className="h-4 w-4" />
@@ -154,13 +166,12 @@ export default function ContactPage() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                     WhatsApp
                   </p>
-                  <p className="mt-1 font-semibold text-slate-900">
-                    +960 755 7042
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">
-                    Best for date checks, quick availability questions and last
-                    minute updates.
-                  </p>
+                  <div className="mt-1 flex items-center gap-2">
+                    <p className="font-semibold text-slate-900">
+                      {phoneNumber}
+                    </p>
+                    <CopyButton value={phoneNumber} />
+                  </div>
                 </div>
               </div>
 
@@ -172,30 +183,12 @@ export default function ContactPage() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                     Email
                   </p>
-                  <p className="mt-1 font-semibold text-slate-900">
-                    info@example.com
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">
-                    Use email if you prefer a full written quote or you&apos;re
-                    planning a group trip.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-50 text-sky-600 ring-1 ring-sky-100">
-                  <MapPin className="h-4 w-4" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                    Based in
-                  </p>
-                  <p className="mt-1 font-semibold text-slate-900">
-                    Malé &amp; local partner islands
-                  </p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">
-                    All trips are run with licensed local operators and guides.
-                  </p>
+                  <div className="mt-1 flex items-center gap-2">
+                    <p className="font-semibold text-slate-900">
+                      {emailAddress}
+                    </p>
+                    <CopyButton value={emailAddress} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -224,8 +217,7 @@ export default function ContactPage() {
                       WhatsApp message
                     </h3>
                     <p className="mt-1 text-sm text-slate-700">
-                      Perfect for quick questions, checking dates or sending us
-                      your certification cards and flight times.
+                      Tap below to start a chat with us on WhatsApp.
                     </p>
                   </div>
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] ring-1 ring-[#25D366]/30">
@@ -233,36 +225,26 @@ export default function ContactPage() {
                   </div>
                 </header>
 
-                <ul className="space-y-1.5 text-sm text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-500" />
-                    <span>Tell us your preferred month or exact dates.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-500" />
-                    <span>Share number of divers and certification level.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-500" />
-                    <span>
-                      Mention if you&apos;re interested in liveaboard, local
-                      diving or tiger sharks / mantas.
-                    </span>
-                  </li>
-                </ul>
+                <div className="rounded-2xl bg-white/95 px-4 py-3 text-sm ring-1 ring-slate-200">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Text to
+                  </p>
+                  <div className="mt-1 flex items-center justify-between gap-2">
+                    <p className="font-semibold text-slate-900">
+                      {phoneNumber}
+                    </p>
+                    <CopyButton value={phoneNumber} />
+                  </div>
+                </div>
 
                 <div className="pt-1">
                   <PrimaryButton
-                    href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20dive%20trip%20in%20the%20Maldives.%20Here%20are%20my%20dates%2C%20number%20of%20divers%20and%20certification%20levels%3A"
+                    href="https://wa.me/9607557042?text=Hi%21%20I%20found%20your%20website%20and%20would%20love%20to%20plan%20a%20dive%20trip%20with%20you.%20Could%20you%20help%20me%20with%20options%20and%20prices%3F"
                     variant="emerald"
                     size="lg"
                   >
                     Start a WhatsApp chat
                   </PrimaryButton>
-                  <p className="mt-1 text-[11px] text-slate-500">
-                    We&apos;ll reply as soon as we&apos;re back on the boat or
-                    from the dive.
-                  </p>
                 </div>
               </div>
             </article>
@@ -279,11 +261,10 @@ export default function ContactPage() {
                       Detailed enquiries
                     </p>
                     <h3 className="mt-1 text-lg font-extrabold text-slate-900 md:text-xl">
-                      Email us your plan
+                      Email us
                     </h3>
                     <p className="mt-1 text-sm text-slate-700">
-                      Great if you want a written quote, you&apos;re organising
-                      a group, or you prefer email over messaging apps.
+                      Best for full quotes and group bookings.
                     </p>
                   </div>
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-50 text-sky-600 ring-1 ring-sky-100">
@@ -295,88 +276,25 @@ export default function ContactPage() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                     Send to
                   </p>
-                  <p className="mt-1 font-semibold text-slate-900">
-                    info@example.com
-                  </p>
-                </div>
-
-                <div className="space-y-1.5 text-sm text-slate-700">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600">
-                    Helpful details to include
-                  </p>
-                  <ul className="space-y-1.5">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      <span>Exact or approximate travel dates.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      <span>
-                        Number of divers and certification level for each
-                        person.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                      <span>
-                        Which trips you&apos;re interested in (liveaboard, tiger
-                        sharks, Baa Atoll, etc.).
-                      </span>
-                    </li>
-                  </ul>
+                  <div className="mt-1 flex items- justify-between gap-2">
+                    <p className="font-semibold text-slate-900">
+                      {emailAddress}
+                    </p>
+                    <CopyButton value={emailAddress} />
+                  </div>
                 </div>
 
                 <div className="pt-1">
                   <PrimaryButton
-                    href="mailto:info@example.com?subject=Maldives%20dive%20trip%20enquiry&body=Hi%2C%0A%0AWe%27d%20like%20to%20plan%20a%20dive%20trip%20in%20the%20Maldives.%0A%0ADates%3A%20%0ANumber%20of%20divers%20and%20levels%3A%20%0ATrips%20we%27re%20interested%20in%3A%20%0ABudget%20range%3A%20%0A%0AThank%20you!"
+                    href={`mailto:${emailAddress}?subject=Maldives%20dive%20trip%20enquiry`}
                     variant="sky"
                     size="lg"
                   >
                     Write us an email
                   </PrimaryButton>
-                  <p className="mt-1 text-[11px] text-slate-500">
-                    Opens your email app with a pre-filled subject and
-                    structure.
-                  </p>
                 </div>
               </div>
             </article>
-          </div>
-        </section>
-
-        {/* Extra info / small row */}
-        <section
-          ref={infoRef}
-          className="mt-4 grid gap-4 text-sm text-slate-700 md:grid-cols-3"
-        >
-          <div className="rounded-2xl bg-white/90 px-4 py-3 ring-1 ring-slate-200">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              When we reply
-            </p>
-            <p className="mt-1">
-              We&apos;re often on the boat or underwater, but we check messages
-              between trips and in the evenings.
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white/90 px-4 py-3 ring-1 ring-slate-200">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Groups &amp; custom trips
-            </p>
-            <p className="mt-1">
-              Planning a group, workshop or photo trip? Email works best so we
-              can send a detailed multi-option proposal.
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white/90 px-4 py-3 ring-1 ring-slate-200">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Non-divers &amp; mixed groups
-            </p>
-            <p className="mt-1">
-              Travelling with snorkellers or non-divers? Mention this in your
-              message and we&apos;ll suggest mixed itineraries.
-            </p>
           </div>
         </section>
       </div>

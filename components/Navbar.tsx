@@ -192,7 +192,7 @@ export default function Navbar() {
           {/* CTA (wrapped for ref) */}
           <span ref={ctaWrapRef} className="hidden md:inline-flex">
             <PrimaryButton
-              href="https://wa.me/9607557042?text=Hi%2C%20I%27m%20interested%20in%20the%20Dive%20with%20Locals%20packages.%20My%20name%20is%20____%20and%20we%20are%20____%20certified%20divers."
+              href="https://wa.me/9607557042?text=Hi%21%20I%20found%20your%20website%20and%20would%20love%20to%20plan%20a%20dive%20trip%20with%20you.%20Could%20you%20help%20me%20with%20options%20and%20prices%3F"
               variant="emerald"
               size="md"
             >
