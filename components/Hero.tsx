@@ -110,10 +110,14 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="grid place-items-center mt-28">
-      <div ref={root} className="relative mx-auto w-[min(1400px,94vw)] pb-20">
+    <section className="mt-24 md:mt-28">
+      <div
+        ref={root}
+        className="relative mx-auto w-full max-w-[1400px] pb-12 md:pb-20"
+      >
         <div className="relative overflow-hidden rounded-[5px]">
-          <div className="relative w-full aspect-[16/9]">
+          {/* Taller on mobile, 16:9 on md+ */}
+          <div className="relative w-full aspect-[4/5] md:aspect-[16/9]">
             <video
               src="/hero.mp4"
               className="h-full w-full object-cover"
