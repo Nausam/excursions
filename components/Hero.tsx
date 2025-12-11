@@ -57,7 +57,7 @@ export default function Hero() {
     try {
       const hSplit = splitWords(hEl);
       const mSplit = splitChars(mEl);
-      const gSplit = splitChars(gEl);
+      const gSplit = splitWords(gEl);
 
       gsap.set(hSplit.spans, {
         y: 22,
@@ -138,13 +138,12 @@ export default function Hero() {
                 Maldives excursions • liveaboards • diving
               </p>
 
-              <h1 className="mt-3 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-5xl">
-                <span ref={wordMain}>Curated ocean</span>
-                <br className="hidden sm:block" />
-                <span
-                  ref={wordGlow}
-                  className="inline-block text-sky-200 drop-shadow-[0_0_35px_rgba(56,189,248,.4)]"
-                >
+              <h1 className="mt-3 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-3xl">
+                <span ref={wordMain} className="block">
+                  Curated ocean
+                </span>
+
+                <span ref={wordGlow} className="block text-sky-200">
                   adventures across the Maldives
                 </span>
               </h1>

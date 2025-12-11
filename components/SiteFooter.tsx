@@ -281,10 +281,9 @@ export default function SiteFooter() {
             <div className="ft-brand flex flex-col items-center gap-3 sm:flex-row sm:items-center">
               <Image
                 src="/images/logo.png"
-                width={200}
-                height={200}
+                width={300}
+                height={300}
                 alt="La Via Maldives logo"
-                className="h-auto w-auto"
                 priority={false}
                 unoptimized
               />
