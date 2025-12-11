@@ -113,10 +113,9 @@ export default function Hero() {
     <section className="mt-24 md:mt-28">
       <div
         ref={root}
-        className="relative mx-auto w-full max-w-[1400px] pb-12 md:pb-20"
+        className="relative mx-auto w-full max-w-[1400px] pb-16 md:pb-24"
       >
-        <div className="relative overflow-hidden rounded-[5px]">
-          {/* Taller on mobile, 16:9 on md+ */}
+        <div className="relative overflow-hidden rounded-[24px]">
           <div className="relative w-full aspect-[4/5] md:aspect-[16/9]">
             <video
               src="/hero.mp4"
@@ -125,12 +124,38 @@ export default function Hero() {
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="/images/hero-poster.jpg"
             />
+
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent" />
+
+            <div className="pointer-events-auto absolute inset-x-0 bottom-0 md:bottom-10 px-6 pb-8 pt-10 md:px-12 md:pb-12">
+              <p
+                ref={headingLine}
+                className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-sky-100/90"
+              >
+                Maldives excursions • liveaboards • diving
+              </p>
+
+              <h1 className="mt-3 text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-white max-w-3xl">
+                <span ref={wordMain}>Curated ocean adventures</span>{" "}
+                <span
+                  ref={wordGlow}
+                  className="inline-block text-sky-200 drop-shadow-[0_0_35px_rgba(56,189,248,.4)]"
+                >
+                  across the Maldives
+                </span>
+              </h1>
+
+              <p className="mt-4 max-w-xl text-sm md:text-base text-sky-50/90">
+                Escape to reefs, sandbanks and local islands with small-group
+                trips guided by Maldivian experts. Snorkel with mantas, join a
+                liveaboard or plan a custom route with La Via Maldives.
+              </p>
+            </div>
           </div>
         </div>
-
-        {/* Floating search card slot */}
-        <div className="absolute left-1/2 -bottom-6 z-10 w-[min(1100px,92%)] -translate-x-1/2" />
       </div>
     </section>
   );

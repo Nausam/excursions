@@ -175,7 +175,7 @@ export default function WhyUs() {
       className="mx-auto w-[min(1400px,94vw)] py-10 md:py-14"
     >
       <div className="mx-auto mb-8 text-center md:w-3/4 wy-header">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-900">
+        <h2 className="mt-1 text-[clamp(28px,4vw,44px)] font-extrabold leading-tight text-neutral-900">
           Why travel with us
         </h2>
         <p className="mt-2 text-neutral-600">

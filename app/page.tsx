@@ -11,7 +11,7 @@ import WhyUs from "@/components/WhyUs";
 
 export default function Page() {
   return (
-    <main>
+    <main className="min-h-screen">
       <Hero />
       {/* <AvailabilityBar /> */}
       <CategoriesGrid />

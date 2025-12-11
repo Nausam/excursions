@@ -116,14 +116,11 @@ export default function TopExcursions() {
       className="mx-auto w-[min(1400px,94vw)] py-12 md:py-16"
     >
       <div className="text-center tx-header">
-        <p className="text-sm font-semibold tracking-wide text-neutral-500">
-          Top Selling
-        </p>
-        <h2 className="mt-1 text-3xl md:text-5xl font-extrabold text-neutral-900">
+        <h2 className="mt-1 text-[clamp(28px,4vw,44px)] font-extrabold leading-tight text-neutral-900">
           Top Excursions
         </h2>
         <p className="mt-3 text-neutral-600">
-          Reserve you next unforgettable adventure with our curated selection
+          Reserve you next unforgettable adventure with our curated selection.
         </p>
       </div>
 

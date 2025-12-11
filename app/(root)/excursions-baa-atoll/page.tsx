@@ -1,3 +1,15 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Excursion trips in Baa Atoll – Hanifaru Bay mantas & whale sharks | La Via Maldives",
+  description:
+    "Stay on Dharavandhoo in Baa Atoll and spend your days chasing mantas, whale sharks and dolphins around Hanifaru Bay with La Via Maldives. Small-group excursions with local guides and slow island evenings.",
+  alternates: {
+    canonical: "https://laviatravels.com/excursions-baa-atoll",
+  },
+};
+
 import ExcursionTripDetail, {
   AvailabilityConfig,
   BookingConfig,

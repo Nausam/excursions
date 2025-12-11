@@ -118,7 +118,7 @@ export default function FinalCta() {
         <div className="relative z-10">
           <h2
             data-cta-head
-            className="text-2xl md:text-4xl font-extrabold leading-tight text-neutral-900"
+            className="mt-1 text-[clamp(28px,4vw,44px)] font-extrabold leading-tight text-neutral-900"
           >
             Ready for your next adventure?
           </h2>

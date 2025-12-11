@@ -292,7 +292,7 @@ export default function Safety() {
       className="mx-auto w-[min(1400px,94vw)] py-12 md:py-16"
     >
       <div className="s-hdr mx-auto mb-8 text-center md:w-3/4">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-900">
+        <h2 className="text-sm font-semibold tracking-wide text-neutral-500">
           Safety & qualifications
         </h2>
         <p className="mt-2 text-neutral-600">
