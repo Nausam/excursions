@@ -172,10 +172,6 @@ export default function DiveWithLocalsPageClient() {
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full bg-sky-100/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-900 ring-1 ring-sky-200 shadow-sm">
               <span>Dive with locals</span>
-              <span className="h-1 w-1 rounded-full bg-sky-500" />
-              <span className="normal-case text-[11px] font-medium tracking-normal text-sky-800">
-                Baa Atoll • Fuvahmulah • Small-group diving
-              </span>
             </div>
 
             <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl lg:text-5xl">

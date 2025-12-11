@@ -110,7 +110,7 @@ export default function ContactPageClient() {
   }, []);
 
   const phoneNumber = "+960 755 7042";
-  const emailAddress = "hello@laviamaldives.com";
+  const emailAddress = "info@laviamaldives.com";
 
   return (
     <main className="mx-auto w-[min(1100px,94vw)] py-10 md:py-16 mt-10">
@@ -249,7 +249,7 @@ export default function ContactPageClient() {
                     variant="emerald"
                     size="lg"
                   >
-                    Start a WhatsApp chat
+                    Chat on WhatsApp
                   </PrimaryButton>
                 </div>
               </div>
