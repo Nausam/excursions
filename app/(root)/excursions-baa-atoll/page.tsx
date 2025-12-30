@@ -4,14 +4,13 @@ export const metadata: Metadata = {
   title:
     "Excursion trips in Baa Atoll – Hanifaru Bay mantas & whale sharks | La Via Maldives",
   description:
-    "Stay on Dharavandhoo in Baa Atoll and spend your days chasing mantas, whale sharks and dolphins around Hanifaru Bay with La Via Maldives. Small-group excursions with local guides and slow island evenings.",
+    "Stay on Dharavandhoo in Baa Atoll and spend your days snorkeling with mantas and whale sharks near Hanifaru Bay. Small-group trips with local guides and slow island evenings.",
   alternates: {
     canonical: "https://laviatravels.com/excursions-baa-atoll",
   },
 };
 
 import ExcursionTripDetail, {
-  AvailabilityConfig,
   BookingConfig,
   ExcursionTripDetailProps,
   HeroConfig,
@@ -20,7 +19,7 @@ import ExcursionTripDetail, {
 } from "@/components/ExcursionTripDetail";
 
 const QUICK_FACTS: QuickFactsConfig = {
-  price: "From $1400 per person",
+  price: "$1550 per person",
   duration: "6 nights • 7 days",
   groupSize: "14–18 guests",
   location: "Dharavandhoo • Baa Atoll (UNESCO Biosphere Reserve)",
@@ -28,11 +27,11 @@ const QUICK_FACTS: QuickFactsConfig = {
 
 const HERO: HeroConfig = {
   badgeLabel: "Excursion trips in Baa Atoll",
-  badgeMeta: "Peak manta season • Small groups",
+  badgeMeta: "Hanifaru Bay • Mantas & whale sharks",
   titleHighlight: "Hanifaru Bay mantas,",
   titleRest: "whale sharks & local island life.",
   description:
-    "Stay on Dharavandhoo, a lived-in local island in the heart of the UNESCO Biosphere Reserve. Spend your days chasing mantas, whale sharks and dolphins. Then wind down with sunsets, beach BBQs and slow island evenings.",
+    "Discover the lesser-travelled Maldives with us and witness the mass feeding aggregations of manta rays and whale sharks at Hanifaru Bay. Stay on Dharavandhoo — a local island just minutes from Hanifaru — with easy access via the island airport and comfortable hotels.",
   imageSrc: "/images/excursion.png",
   imageAlt: "A boat crossing the turquoise water of Baa Atoll",
   routeChipLabel: "Baa",
@@ -40,32 +39,24 @@ const HERO: HeroConfig = {
   routeChipSubtitle: "Mantas • Whale sharks • Turtles",
 };
 
-const AVAILABILITY: AvailabilityConfig = {
-  yearLabel: "2026",
-  description:
-    "Bookings are open for the following months in 2026. Pick a month that fits your travel plan and get in touch to confirm exact dates and group availability.",
-  months: ["January", "February", "March", "April", "May"],
-};
-
 const OVERVIEW: string[] = [
-  "Baa Atoll is one of the Maldives' most celebrated marine protected areas, known worldwide for its huge seasonal gatherings of manta rays and whale sharks at Hanifaru Bay. When conditions are right, snorkellers can witness barrel-rolling chains of mantas and whale sharks feeding in the narrow bay.",
-  "This trip is designed for travellers who want to experience those encounters while staying on a local island, getting to know the community, and exploring nearby reefs, sandbanks and atolls. You’ll spend your days in the water and your evenings relaxing on Dharavandhoo – the perfect mix of adventure and slow island life.",
+  "Join a small-group adventure in Baa Atoll to experience one of the Maldives’ most exciting snorkelling encounters: seasonal manta and whale shark activity around Hanifaru Bay.",
+  "You’ll stay on Dharavandhoo, a local island close to Hanifaru, and spend your days searching for mantas, turtles, dolphins and whale sharks — with relaxed evenings, island time, and a final BBQ with a traditional Boduberu show.",
 ];
 
 const INCLUSIONS: string[] = [
-  "Accommodation for 6 nights / 7 days on Dharavandhoo (local island).",
-  "Standard rooms (shared); room-alone options can be arranged directly with the hotel.",
-  "Full-board meals every day (breakfast, lunch and dinner).",
-  "All transfers between Malé (Velana International Airport) and Dharavandhoo.",
-  "Local expert guides throughout the trip.",
-  "Snorkelling equipment for all planned activities.",
+  "Accommodation for 6 nights (Blue World hotel).",
+  "Half board meals every day.",
+  "Return domestic air tickets (MLE ↔ DRV ↔ MLE).",
+  "Local experts / guides.",
+  "Snorkelling equipment.",
 ];
 
 const EXCLUSIONS: string[] = [
-  "Drone video package (approx. $30).",
-  "Professional photo / video content by our photographer (includes 2–4 edited images, depending on good shots).",
-  "Compulsory travel and diving insurance.",
-  "Any extra activities, drinks, or meals not mentioned in the program.",
+  "Drone videos (price to be confirmed).",
+  "Underwater video (price to be confirmed).",
+  "Compulsory travel & diving insurance.",
+  "Extra charges for a single room.",
 ];
 
 const ITINERARY: ItineraryDay[] = [
@@ -73,80 +64,83 @@ const ITINERARY: ItineraryDay[] = [
     day: 1,
     title: "Arrival to Maldives & Turtles",
     description: [
-      "Arrive at Malé Velana International Airport where one of our representatives will meet you.",
-      "You’ll be directed to your domestic flight from Malé to Dharavandhoo Island in Baa Atoll.",
-      "After check-in, we head out by boat in search of turtles and enjoy our first snorkelling session with them.",
-      "Lunch and relaxed group dinner at the hotel, with free time to settle in on the island.",
+      "Meet our representative at Malé Velana International Airport.",
+      "Domestic flight from Malé to Dharavandhoo (DRV).",
+      "Hotel check-in.",
+      "Two-spot snorkelling session: Turtle Reef and Kihaa Reef.",
+      "Return to the hotel for group dinner.",
     ],
   },
   {
     day: 2,
-    title: "Manta Safari, Dolphins & Uninhabited Island",
+    title: "Manta Safari & Dolphins Search",
     description: [
-      "Breakfast at the hotel (local and continental options available).",
-      "Morning manta and turtle safari: we head out to snorkel with mantas and turtles at nearby reef points.",
-      "Return to the hotel for lunch.",
-      "In the afternoon we go back out in search of dolphins and enjoy a chilled evening back at the hotel before sunset.",
+      "Breakfast at the hotel (local and continental options).",
+      "Two-spot snorkelling session searching for mantas and turtles.",
+      "Dolphin search by boat.",
+      "Return to the hotel before sunset for a chill evening.",
+      "Dinner at the hotel.",
     ],
   },
   {
     day: 3,
-    title: "Visit to Raa Atoll",
+    title: "Dive Experience Day & Sandbank",
     description: [
-      "Breakfast at the hotel.",
-      "Full-day excursion to neighbouring Raa Atoll, where conditions often allow for more manta encounters.",
-      "Local-style lunch on a remote sandbank with time to relax on the beach.",
-      "Snorkel and explore the surrounding reefs before returning to Dharavandhoo for a quiet evening.",
+      "Breakfast at the hotel (local and continental options).",
+      "Discover Scuba Dive (DSD) — optional.",
+      "Sandbank trip.",
+      "Dinner at the hotel.",
     ],
   },
   {
     day: 4,
-    title: "Hanifaru Bay – Mantas & Whale Sharks (First Chance)",
+    title: "Mantas & Whale Shark Day",
     description: [
       "Breakfast at the hotel.",
-      "Boat trip to Hanifaru Bay to snorkel with mantas; if there are no mantas in the bay, we head off in search of them in nearby channels.",
-      "Local lunch at the hotel.",
-      "Free time or extra snorkelling depending on conditions, then a relaxed evening on the island.",
+      "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
+      "Search for whale sharks; once located, snorkel with the biggest fish in the world.",
+      "Return to the hotel for a chill evening on the island.",
+      "Dinner at the hotel.",
     ],
   },
   {
     day: 5,
-    title: "Hanifaru Bay & Sunset Fishing",
+    title: "Mantas & Whale Sharks + Sunset Fishing",
     description: [
       "Breakfast at the hotel.",
-      "Another day focused on mantas and whale shark chances around Hanifaru Bay or alternative sites, depending on currents and visibility.",
-      "Local lunch at the hotel.",
-      "In the late afternoon we head out for a traditional sunset fishing trip.",
-      "Return to the hotel for a chilled evening on the island.",
+      "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
+      "Sunset fishing trip.",
+      "Return to the hotel for a chill evening on the island.",
+      "Dinner at the hotel.",
     ],
   },
   {
     day: 6,
-    title: "Final Manta / Whale Shark Day & Beach BBQ",
+    title: "Whale Shark Search & Farewell BBQ",
     description: [
       "Breakfast at the hotel.",
-      "A final day dedicated to mantas and whale sharks: we visit Hanifaru Bay again or search nearby areas if needed.",
-      "Local lunch at the hotel.",
-      "Once we locate them, we snorkel with whale sharks – the largest fish in the world.",
-      "In the evening, enjoy a farewell beach BBQ with traditional bodu beru drumming to celebrate the end of the trip.",
+      "Search for whale sharks; once located, snorkel with them.",
+      "Relaxing / chill day on the island.",
+      "Final group dinner BBQ and traditional Boduberu show.",
     ],
   },
   {
     day: 7,
     title: "Departure Day",
     description: [
-      "Breakfast at the hotel and check-out.",
-      "Transfer from Dharavandhoo back to Malé by domestic flight.",
-      "Trip ends at Velana International Airport – time to head back home with manta and whale shark memories.",
+      "Breakfast and check-out.",
+      "Transfer back to Malé Airport (domestic flight).",
+      "Trip ends at Velana International Airport.",
     ],
   },
 ];
 
 const BOOKING: BookingConfig = {
   heading: "Ready to book this trip?",
-  body: "Send us your preferred dates and number of travellers and we'll confirm availability, group size and domestic flight options.",
-  ctaLabel: "Contact us to book",
-  ctaHref: "https://wa.me/7481126",
+  body: "Message us your preferred month, number of travellers, and any questions (room options, private add-ons, etc.). We’ll confirm availability and domestic flight details.",
+  ctaLabel: "WhatsApp us to book",
+  ctaHref:
+    "https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20the%20Baa%20Atoll%20Excursion%20Trip%20(6%20nights%20%2F%207%20days).%20We%20are%20____%20people%20and%20our%20preferred%20month%20is%20____.%20Please%20share%20availability%20and%20details.",
 };
 
 const BAA_ATOLL_TRIP: ExcursionTripDetailProps = {
@@ -157,7 +151,7 @@ const BAA_ATOLL_TRIP: ExcursionTripDetailProps = {
   exclusions: EXCLUSIONS,
   itinerary: ITINERARY,
   booking: BOOKING,
-  availability: AVAILABILITY,
+  // availability omitted because the PDF doesn’t specify months/year
 };
 
 export default function Page() {

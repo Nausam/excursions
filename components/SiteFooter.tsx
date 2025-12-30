@@ -381,7 +381,7 @@ export default function SiteFooter() {
             <h4 className="text-sm font-semibold text-neutral-900">Contact</h4>
             <ul className="ft-contact mt-3 space-y-2 text-sm text-neutral-700">
               <li className="flex items-center justify-center gap-2 sm:justify-start">
-                <Mail size={16} /> hello@laviamaldives.com
+                <Mail size={16} /> laviamaldives@gmail.com
               </li>
               <li className="flex items-center justify-center gap-2 sm:justify-start">
                 <Phone size={16} /> +960 755 7042

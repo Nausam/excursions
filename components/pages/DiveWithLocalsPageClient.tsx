@@ -26,6 +26,28 @@ type DivePackage = {
 
 const PACKAGES: DivePackage[] = [
   {
+    id: "baa",
+    title: "Dive in Baa Atoll – Dharavandhoo (DRV)",
+    locationLabel: "Baa Atoll • Dharavandhoo (DRV) • Maldives",
+    shortLabel: "UNESCO reefs & manta season",
+    price: "$1880 per person",
+    duration: "6 nights",
+    blurb:
+      "With diverse marine life across reefs, thilas (submerged islands), overhangs and swim-throughs, Baa Atoll fully earns its UNESCO status. Expect coral-rich sites like Dhonfanu Thila and scenic canyon/overhang reefs at Nelivaru Haa — plus excellent manta encounters during the season.",
+    inclusions: [
+      "Return domestic air tickets (MLE ↔ DRV ↔ MLE)",
+      "6 nights stay in a hotel (Blue World)",
+      "Half board meals",
+      "10 dives (2 dives per day)",
+      "2 Hanifaru Bay trips (only in Hanifaru season)",
+      "Sunset fishing",
+      "Sandbank trip",
+      "Bicycles",
+      "Diving equipment provided",
+    ],
+    addOns: [],
+  },
+  {
     id: "tiger",
     title: "Dive with Tiger Sharks – Fuvahmulah",
     locationLabel: "Fuvahmulah • Southern Maldives (Equator)",
@@ -185,11 +207,11 @@ export default function DiveWithLocalsPageClient() {
             </h1>
 
             <p className="max-w-full text-sm leading-relaxed text-slate-700 md:text-base">
-              Diving in the Maldives is the most popular way to see the
-              underwater world. From manta-filled reefs in Baa Atoll to
-              year-round tiger sharks in Fuvahmulah, we pair certified local
-              guides with comfortable island stays so you get the best of
-              Maldivian diving at your level.
+              Dive week packages with certified local guides — from
+              UNESCO-protected reefs and manta season highlights in Baa Atoll
+              (Dharavandhoo) to year-round tiger sharks in Fuvahmulah.
+              Comfortable island stays, full dive days, and relaxed evenings on
+              local islands.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -243,10 +265,11 @@ export default function DiveWithLocalsPageClient() {
             Two ways to dive with locals
           </h2>
           <p>
-            Whether you want close, respectful encounters with tiger sharks or
-            manta-focused reef dives in a UNESCO Biosphere Reserve, these
-            week-long trips are built for certified divers who want full days in
-            the water and relaxed island evenings.
+            Choose between manta-focused reef diving in Baa Atoll (including
+            Hanifaru Bay trips in season) or close, respectful encounters with
+            tiger sharks in Fuvahmulah. These week-long trips are built for
+            certified divers who want full days in the water and relaxed island
+            evenings.
           </p>
         </section>
 
@@ -256,7 +279,7 @@ export default function DiveWithLocalsPageClient() {
             <article
               key={pkg.id}
               data-dive-card
-              className="card-ambient  p-6 shadow-md md:p-10"
+              className="card-ambient relative p-6 shadow-md md:p-10"
             >
               {/* top accent */}
               <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-emerald-400 via-sky-400 to-cyan-400" />
@@ -299,23 +322,25 @@ export default function DiveWithLocalsPageClient() {
                     </div>
 
                     {/* Optional add-ons */}
-                    <div className="space-y-2 border-t border-emerald-50 pt-4">
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-700">
-                        Optional add-ons
-                      </p>
+                    {pkg.addOns.length > 0 && (
+                      <div className="space-y-2 border-t border-emerald-50 pt-4">
+                        <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-slate-700">
+                          Optional add-ons
+                        </p>
 
-                      <div className="flex flex-wrap gap-2">
-                        {pkg.addOns.map((item) => (
-                          <div
-                            key={item}
-                            className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs md:text-sm font-medium text-sky-900 ring-1 ring-sky-100 shadow-sm"
-                          >
-                            <PlusCircle className="h-4 w-4 text-emerald-500" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
+                        <div className="flex flex-wrap gap-2">
+                          {pkg.addOns.map((item) => (
+                            <div
+                              key={item}
+                              className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs md:text-sm font-medium text-sky-900 ring-1 ring-sky-100 shadow-sm"
+                            >
+                              <PlusCircle className="h-4 w-4 text-emerald-500" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   {/* Right: compact info cards */}

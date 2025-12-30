@@ -292,7 +292,7 @@ function ItineraryCard({ item, i }: { item: ItineraryDay; i: number }) {
 
         <div
           className={[
-            "pointer-events-none absolute bottom-3 right-4 rounded-full px-2 py-[2px] text-[11px] font-semibold uppercase tracking-wide",
+            "pointer-events-none absolute bottom-3 right-4 rounded-full px-2 py-[2px] text-[11px] font-semibold uppercase tracking-wide border",
             acc.stampBg,
             acc.stampBorder,
             acc.stampText,
@@ -329,22 +329,14 @@ export default function ExcursionTripDetail({
 
     const cleanups: Array<() => void> = [];
 
-    // make sure shell is fully visible by default
     gsap.set(el, { opacity: 1 });
 
-    // only animate the lift, not the opacity
     const shellTween = gsap.fromTo(
       el,
       { y: 18 },
-      {
-        y: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        clearProps: "transform",
-      }
+      { y: 0, duration: 0.7, ease: "power3.out", clearProps: "transform" }
     );
 
-    // --- keep the rest of your IntersectionObserver logic exactly as it is ---
     if (summaryRef.current) {
       const section = summaryRef.current;
       const cleanup = observeOnce(
@@ -493,12 +485,8 @@ export default function ExcursionTripDetail({
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <PrimaryButton
-                href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20day%20trip%20%2F%20excursion%20with%20La%20Via%20Maldives.%20We%20are%20____%20people%20and%20our%20preferred%20date%20is%20____."
-                variant="emerald"
-                size="lg"
-              >
-                WhatsApp us to book
+              <PrimaryButton href={booking.ctaHref} variant="emerald" size="lg">
+                {booking.ctaLabel}
               </PrimaryButton>
             </div>
           </div>
@@ -517,18 +505,13 @@ export default function ExcursionTripDetail({
               />
 
               <div className="absolute left-4 bottom-4">
-                {/* gradient frame */}
                 <div className="inline-flex rounded-full bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 p-[2px] shadow-xl shadow-sky-900/30">
-                  {/* glass inner pill */}
                   <div className="flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-xs md:text-sm font-medium text-white ring-1 ring-white/40 backdrop-blur-md">
                     <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/14 ring-1 ring-white/40">
                       <MapPin className="h-4 w-4" />
                     </span>
 
                     <div className="leading-tight">
-                      {/* <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-sky-50/90">
-                        {hero.routeChipLabel}
-                      </p> */}
                       <p className="text-[11px] md:text-xs font-semibold">
                         {hero.routeChipTitle}
                       </p>
@@ -549,6 +532,7 @@ export default function ExcursionTripDetail({
             <h2 className="text-lg md:text-xl font-bold text-slate-900">
               Trip summary
             </h2>
+
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div
                 data-summary-card
@@ -567,7 +551,7 @@ export default function ExcursionTripDetail({
                       {quickFacts.price}
                     </dd>
                     <p className="mt-0.5 text-[11px] text-slate-500">
-                      Shared rooms • upgrades possible
+                      Shared rooms • single room extra
                     </p>
                   </div>
                 </div>
@@ -636,7 +620,7 @@ export default function ExcursionTripDetail({
                       {quickFacts.location}
                     </dd>
                     <p className="mt-0.5 text-[11px] text-slate-500">
-                      Domestic flight from Malé included
+                      Domestic flights included
                     </p>
                   </div>
                 </div>
@@ -656,12 +640,6 @@ export default function ExcursionTripDetail({
                 {para}
               </p>
             ))}
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-900 ring-1 ring-sky-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
-              <span>
-                Best season · May – November (manta &amp; whale shark activity)
-              </span>
-            </div>
           </div>
         </section>
 
@@ -690,7 +668,6 @@ export default function ExcursionTripDetail({
                   <li
                     key={item}
                     className="flex items-start gap-2 rounded-xl bg-white/90 px-3 py-2 ring-1 ring-emerald-100"
-                    data-list-item="included"
                   >
                     <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald-500 shadow-sm" />
                     <span>{item}</span>
@@ -723,7 +700,6 @@ export default function ExcursionTripDetail({
                   <li
                     key={item}
                     className="flex items-start gap-2 rounded-xl bg-white/90 px-3 py-2 ring-1 ring-rose-50"
-                    data-list-item="excluded"
                   >
                     <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-rose-400 shadow-sm" />
                     <span>{item}</span>
@@ -762,7 +738,6 @@ export default function ExcursionTripDetail({
               data-availability-banner
               className="card-ambient card-ambient-emerald ring-sky-100/70 px-6 py-6 md:px-8 md:py-7 shadow-md"
             >
-              {/* soft top glow over the ambient card */}
               <div className="pointer-events-none absolute inset-0 opacity-[0.28] [mask-image:radial-gradient(circle_at_top,black,transparent_70%)] bg-gradient-to-b from-yellow-50/80 via-transparent to-emerald-50/70" />
 
               <div className="relative z-10 flex flex-col items-center gap-4 text-center">
@@ -816,11 +791,11 @@ export default function ExcursionTripDetail({
               </div>
               <div className="flex flex-col items-stretch gap-1 md:items-end">
                 <PrimaryButton
-                  href="https://wa.me/9607557042?text=Hi%2C%20I%27d%20like%20to%20book%20a%20day%20trip%20%2F%20excursion%20with%20La%20Via%20Maldives.%20We%20are%20____%20people%20and%20our%20preferred%20date%20is%20____."
+                  href={booking.ctaHref}
                   variant="emerald"
                   size="lg"
                 >
-                  Contact Us
+                  {booking.ctaLabel}
                 </PrimaryButton>
               </div>
             </div>
