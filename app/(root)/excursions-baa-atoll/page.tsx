@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Excursion trips in Baa Atoll – Hanifaru Bay mantas & whale sharks | La Via Maldives",
+    "Excursion trips in Baa Atoll – Hanifaru Bay mantas | La Via Maldives",
   description:
-    "Stay on Dharavandhoo in Baa Atoll and spend your days snorkeling with mantas and whale sharks near Hanifaru Bay. Small-group trips with local guides and slow island evenings.",
+    "Stay on Dharavandhoo in Baa Atoll and spend your days snorkeling with mantas near Hanifaru Bay. Small-group trips with local guides and slow island evenings.",
   alternates: {
     canonical: "https://laviatravels.com/excursions-baa-atoll",
   },
@@ -27,16 +27,16 @@ const QUICK_FACTS: QuickFactsConfig = {
 
 const HERO: HeroConfig = {
   badgeLabel: "Excursion trips in Baa Atoll",
-  badgeMeta: "Hanifaru Bay • Mantas & whale sharks",
+  badgeMeta: "Hanifaru Bay • Mantas",
   titleHighlight: "Hanifaru Bay mantas,",
-  titleRest: "whale sharks & local island life.",
+  titleRest: "local island life.",
   description:
-    "Discover the lesser-travelled Maldives with us and witness the mass feeding aggregations of manta rays and whale sharks at Hanifaru Bay. Stay on Dharavandhoo — a local island just minutes from Hanifaru — with easy access via the island airport and comfortable hotels.",
+    "Discover the lesser-travelled Maldives with us and witness the mass feeding aggregations of manta rays at Hanifaru Bay. Stay on Dharavandhoo — a local island just minutes from Hanifaru — with easy access via the island airport and comfortable hotels.",
   imageSrc: "/images/excursion.png",
   imageAlt: "A boat crossing the turquoise water of Baa Atoll",
   routeChipLabel: "Baa",
   routeChipTitle: "Hanifaru Bay route",
-  routeChipSubtitle: "Mantas • Whale sharks • Turtles",
+  routeChipSubtitle: "Mantas • Turtles",
 };
 
 const OVERVIEW: string[] = [
