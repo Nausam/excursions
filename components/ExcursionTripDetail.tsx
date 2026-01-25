@@ -64,6 +64,10 @@ export type ExcursionTripDetailProps = {
   departureDates?: { label: string; range: string }[];
   /** e.g. "6 pax" – shown as a banner under Available dates */
   minimumPax?: string;
+  /** Itinerary section heading (default: "Detailed Itinerary") */
+  itineraryHeading?: string;
+  /** Note under itinerary heading; use "" to hide (default: "Tap a day to see the plan.") */
+  itineraryNote?: string;
 };
 
 /* ---------- Per-day color accents (no tilt) ---------- */
@@ -321,6 +325,8 @@ export default function ExcursionTripDetail({
   availability,
   departureDates,
   minimumPax,
+  itineraryHeading,
+  itineraryNote,
 }: ExcursionTripDetailProps) {
   const shellRef = useRef<HTMLDivElement | null>(null);
   const summaryRef = useRef<HTMLDivElement | null>(null);
@@ -790,11 +796,13 @@ export default function ExcursionTripDetail({
               id="itinerary-heading"
               className="text-lg md:text-xl font-bold text-slate-900"
             >
-              Detailed Itinerary
+              {itineraryHeading ?? "Detailed Itinerary"}
             </h2>
-            <p className="text-xs md:text-sm text-slate-500">
-              Tap a day to see the plan.
-            </p>
+            {(itineraryNote === undefined || itineraryNote !== "") && (
+              <p className="text-xs md:text-sm text-slate-500">
+                {itineraryNote || "Tap a day to see the plan."}
+              </p>
+            )}
           </div>
 
           <div className="space-y-6">

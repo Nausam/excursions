@@ -62,63 +62,65 @@ const EXCLUSIONS: string[] = [
 const ITINERARY: ItineraryDay[] = [
   {
     day: 1,
-    title: "Arrival to Maldives & Turtles",
+    title: "Arrival to Maldives and turtles!",
     description: [
-      "Meet our representative at Malé Velana International Airport.",
-      "Domestic flight from Malé to Dharavandhoo (DRV).",
+      "You will be greeted at the Malé Velana International Airport by one of our representatives.",
+      "They will direct you to the domestic flight from Malé Airport to Dharavandhoo Island.",
       "Hotel check-in.",
-      "Two-spot snorkelling session: Turtle Reef and Kihaa Reef.",
+      "We will head to two-spot snorkelling (Turtle Reef and Kihaa Reef).",
       "Return to the hotel for group dinner.",
     ],
   },
   {
     day: 2,
-    title: "Manta Safari & Dolphins Search",
+    title: "Manta Safari, Dolphins search",
     description: [
-      "Breakfast at the hotel (local and continental options).",
-      "Two-spot snorkelling session searching for mantas and turtles.",
-      "Dolphin search by boat.",
+      "Breakfast at the hotel (both local and continental options available).",
+      "We will head off in search of mantas and turtles for the first snorkelling session (two-spot snorkelling).",
+      "We will head off in search of dolphins.",
       "Return to the hotel before sunset for a chill evening.",
       "Dinner at the hotel.",
     ],
   },
   {
     day: 3,
-    title: "Dive Experience Day & Sandbank",
+    title: "Dive experience day",
     description: [
-      "Breakfast at the hotel (local and continental options).",
-      "Discover Scuba Dive (DSD) — optional.",
+      "Breakfast at the hotel (both local and continental options available).",
+      "Discover Scuba Dive (DSD) (optional).",
       "Sandbank trip.",
       "Dinner at the hotel.",
     ],
   },
   {
     day: 4,
-    title: "Manta Day",
+    title: "Mantas & Whale Shark",
     description: [
       "Breakfast at the hotel.",
-      "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
+      "Snorkel with mantas (Hanifaru Bay if active; if no mantas in the bay we will head off in search).",
+      "We will head off in search of whale sharks. Once located, we will snorkel with the biggest fish in the world.",
       "Return to the hotel for a chill evening on the island.",
       "Dinner at the hotel.",
     ],
   },
   {
     day: 5,
-    title: "Mantas & Sunset Fishing",
+    title: "Mantas & Whale Shark",
     description: [
       "Breakfast at the hotel.",
-      "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
-      "Sunset fishing trip.",
+      "Snorkel with mantas (Hanifaru Bay if active; if no mantas in the bay we will head off in search).",
+      "Sunset fishing.",
       "Return to the hotel for a chill evening on the island.",
       "Dinner at the hotel.",
     ],
   },
   {
     day: 6,
-    title: "Island Day & Farewell BBQ",
+    title: "Whale Shark & Relaxing day on island",
     description: [
       "Breakfast at the hotel.",
-      "Relaxing / chill day on the island.",
+      "We will head off in search of whale sharks. Once located, we will snorkel with the biggest fish in the world.",
+      "Relax and chill day on the island.",
       "Final group dinner BBQ and traditional Boduberu show.",
     ],
   },
@@ -126,9 +128,8 @@ const ITINERARY: ItineraryDay[] = [
     day: 7,
     title: "Departure Day",
     description: [
-      "Breakfast and check-out.",
-      "Transfer back to Malé Airport (domestic flight).",
-      "Trip ends at Velana International Airport.",
+      "Time to head back home.",
+      "Transfer to Malé Airport.",
     ],
   },
 ];
@@ -155,6 +156,8 @@ const BAA_ATOLL_TRIP: ExcursionTripDetailProps = {
     { label: "November 2026", range: "7th to 13th November 2026" },
   ],
   minimumPax: "6 pax",
+  itineraryHeading: "Itinerary",
+  itineraryNote: "",
   // availability omitted because the PDF doesn’t specify months/year
 };
 
