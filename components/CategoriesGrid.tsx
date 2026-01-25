@@ -38,18 +38,15 @@ const CATEGORIES: Cat[] = [
   },
 ];
 
-const META: Record<string, { duration: string; priceLabel: string }> = {
+const META: Record<string, { duration: string }> = {
   "excursions-baa-atoll": {
     duration: "6 nights • 7 days",
-    priceLabel: "From $1400",
   },
   "dive-with-locals": {
     duration: "6 nights • 7 days",
-    priceLabel: "From $1400",
   },
   "liveaboard-diving": {
     duration: "7 nights",
-    priceLabel: "TBD",
   },
 };
 
@@ -127,10 +124,7 @@ export default function TopExcursions() {
       {/* Uneven, tilted cards */}
       <div className="mt-10 grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3">
         {CATEGORIES.map((d, i) => {
-          const meta = META[d.slug] ?? {
-            duration: "Day trip",
-            priceLabel: "From —",
-          };
+          const meta = META[d.slug] ?? { duration: "Day trip" };
 
           return (
             <article
@@ -159,16 +153,11 @@ export default function TopExcursions() {
 
               {/* Body */}
               <div className="p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-lg font-semibold leading-tight text-neutral-900">
-                      {d.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-neutral-600">{d.blurb}</p>
-                  </div>
-                  <span className="shrink-0 text-sm font-semibold text-neutral-900/80">
-                    {meta.priceLabel}
-                  </span>
+                <div>
+                  <h3 className="text-lg font-semibold leading-tight text-neutral-900">
+                    {d.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-neutral-600">{d.blurb}</p>
                 </div>
 
                 <div className="mt-4 flex items-center justify-between gap-3">

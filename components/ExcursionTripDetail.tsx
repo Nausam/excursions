@@ -60,6 +60,10 @@ export type ExcursionTripDetailProps = {
   itinerary: ItineraryDay[];
   booking: BookingConfig;
   availability?: AvailabilityConfig;
+  /** Each item: { label: e.g. "August 2026", range: e.g. "25th to 31st August 2026" } */
+  departureDates?: { label: string; range: string }[];
+  /** e.g. "6 pax" – shown as a banner under Available dates */
+  minimumPax?: string;
 };
 
 /* ---------- Per-day color accents (no tilt) ---------- */
@@ -315,6 +319,8 @@ export default function ExcursionTripDetail({
   itinerary,
   booking,
   availability,
+  departureDates,
+  minimumPax,
 }: ExcursionTripDetailProps) {
   const shellRef = useRef<HTMLDivElement | null>(null);
   const summaryRef = useRef<HTMLDivElement | null>(null);
@@ -626,6 +632,73 @@ export default function ExcursionTripDetail({
                 </div>
               </div>
             </dl>
+
+            {departureDates && departureDates.length > 0 && (
+              <div className="mt-6 space-y-4">
+                <h3 className="text-lg md:text-xl font-bold text-slate-900">
+                  Available dates
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {departureDates.map(({ label, range }, i) => (
+                    <div
+                      key={range}
+                      data-summary-card
+                      className="relative overflow-hidden rounded-2xl bg-white/95 ring-1 ring-sky-100 shadow-sm"
+                    >
+                      <div
+                        className={
+                          i % 3 === 0
+                            ? "absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-sky-400 via-cyan-400 to-emerald-400"
+                            : i % 3 === 1
+                              ? "absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400"
+                              : "absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-emerald-400 via-sky-400 to-cyan-400"
+                        }
+                      />
+                      <div className="flex items-start gap-3 p-4">
+                        <div
+                          className={
+                            i % 3 === 0
+                              ? "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-600 ring-1 ring-sky-100"
+                              : i % 3 === 1
+                                ? "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 ring-1 ring-cyan-100"
+                                : "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100"
+                          }
+                        >
+                          <CalendarDays className="h-4 w-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <dt className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                            {label}
+                          </dt>
+                          <dd className="mt-1 text-sm font-semibold leading-snug text-slate-900">
+                            {range}
+                          </dd>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {minimumPax && (
+                  <div
+                    data-summary-card
+                    className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-50/90 via-orange-50/70 to-amber-50/90 p-4 ring-1 ring-amber-200/80 shadow-sm"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700 ring-1 ring-amber-200">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-800/90">
+                        Minimum requirement
+                      </p>
+                      <p className="mt-0.5 text-sm font-semibold text-slate-900">
+                        {minimumPax}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div

@@ -105,7 +105,7 @@ const ITINERARY: ItineraryDay[] = [
   },
   {
     day: 5,
-    title: "Mantas & Whale Sharks + Sunset Fishing",
+    title: "Mantas & Sunset Fishing",
     description: [
       "Breakfast at the hotel.",
       "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
@@ -151,6 +151,12 @@ const BAA_ATOLL_TRIP: ExcursionTripDetailProps = {
   exclusions: EXCLUSIONS,
   itinerary: ITINERARY,
   booking: BOOKING,
+  departureDates: [
+    { label: "August 2026", range: "25th to 31st August 2026" },
+    { label: "October 2026", range: "7th to 13th October 2026" },
+    { label: "November 2026", range: "7th to 13th November 2026" },
+  ],
+  minimumPax: "6 pax",
   // availability omitted because the PDF doesn’t specify months/year
 };
 
