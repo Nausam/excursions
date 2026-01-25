@@ -40,8 +40,8 @@ const HERO: HeroConfig = {
 };
 
 const OVERVIEW: string[] = [
-  "Join a small-group adventure in Baa Atoll to experience one of the Maldives’ most exciting snorkelling encounters: seasonal manta and whale shark activity around Hanifaru Bay.",
-  "You’ll stay on Dharavandhoo, a local island close to Hanifaru, and spend your days searching for mantas, turtles, dolphins and whale sharks — with relaxed evenings, island time, and a final BBQ with a traditional Boduberu show.",
+  "Join a small-group adventure in Baa Atoll to experience one of the Maldives’ most exciting snorkelling encounters: seasonal manta activity around Hanifaru Bay.",
+  "You’ll stay on Dharavandhoo, a local island close to Hanifaru, and spend your days searching for mantas, turtles, and dolphins — with relaxed evenings, island time, and a final BBQ with a traditional Boduberu show.",
 ];
 
 const INCLUSIONS: string[] = [
@@ -94,11 +94,10 @@ const ITINERARY: ItineraryDay[] = [
   },
   {
     day: 4,
-    title: "Mantas & Whale Shark Day",
+    title: "Manta Day",
     description: [
       "Breakfast at the hotel.",
       "Snorkel with mantas (Hanifaru Bay if active; otherwise we search nearby).",
-      "Search for whale sharks; once located, snorkel with the biggest fish in the world.",
       "Return to the hotel for a chill evening on the island.",
       "Dinner at the hotel.",
     ],
@@ -116,10 +115,9 @@ const ITINERARY: ItineraryDay[] = [
   },
   {
     day: 6,
-    title: "Whale Shark Search & Farewell BBQ",
+    title: "Island Day & Farewell BBQ",
     description: [
       "Breakfast at the hotel.",
-      "Search for whale sharks; once located, snorkel with them.",
       "Relaxing / chill day on the island.",
       "Final group dinner BBQ and traditional Boduberu show.",
     ],
